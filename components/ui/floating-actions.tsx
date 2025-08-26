@@ -38,18 +38,18 @@ text: "Check out Hari Tech for amazing software solutions!",
   }
 
   return (
-    <div className="fixed right-6 bottom-24 z-40 flex flex-col space-y-3">
+    <div className="fixed right-2 sm:right-3 md:right-6 bottom-16 sm:bottom-20 md:bottom-24 z-40 flex flex-col space-y-2 sm:space-y-3">
       {/* Theme Toggle - Top */}
       <motion.div
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onMouseEnter={() => setShowTooltip("theme")}
         onMouseLeave={() => setShowTooltip("")}
-        className="relative elative w-12 h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center"
+        className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center"
       >
         <ThemeToggle />
         {showTooltip === "theme" && (
-          <div className="absolute right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap ">
+          <div className="absolute right-12 sm:right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap hidden sm:block">
             Toggle Theme
           </div>
         )}
@@ -60,13 +60,13 @@ text: "Check out Hari Tech for amazing software solutions!",
         onClick={handleLike}
         onMouseEnter={() => setShowTooltip("like")}
         onMouseLeave={() => setShowTooltip("")}
-        className={`relative w-12 h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center ${
+        className={`relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center ${
           isLiked ? "bg-red-500 text-white" : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300"
         }`}
       >
-        <ThumbsUp className={`w-5 h-5 ${isLiked ? "fill-current" : ""}`} />
+        <ThumbsUp className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${isLiked ? "fill-current" : ""}`} />
         {showTooltip === "like" && (
-          <div className="absolute right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+          <div className="absolute right-12 sm:right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap hidden sm:block">
             {likes} likes
           </div>
         )}
@@ -78,13 +78,13 @@ text: "Check out Hari Tech for amazing software solutions!",
         onClick={handleBookmark}
         onMouseEnter={() => setShowTooltip("bookmark")}
         onMouseLeave={() => setShowTooltip("")}
-        className={`relative w-12 h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center ${
+        className={`relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center ${
           isBookmarked ? "bg-blue-500 text-white" : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300"
         }`}
       >
-        <Bookmark className={`w-5 h-5 ${isBookmarked ? "fill-current" : ""}`} />
+        <Bookmark className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${isBookmarked ? "fill-current" : ""}`} />
         {showTooltip === "bookmark" && (
-          <div className="absolute right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap">
+          <div className="absolute right-12 sm:right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap hidden sm:block">
             Bookmark
           </div>
         )}
@@ -96,11 +96,11 @@ text: "Check out Hari Tech for amazing software solutions!",
         onClick={handleShare}
         onMouseEnter={() => setShowTooltip("share")}
         onMouseLeave={() => setShowTooltip("")}
-        className="relative w-12 h-12 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
+        className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
       >
-        <Share2 className="w-5 h-5" />
+        <Share2 className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
         {showTooltip === "share" && (
-          <div className="absolute right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap">Share</div>
+          <div className="absolute right-12 sm:right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap hidden sm:block">Share</div>
         )}
       </motion.button>
     </div>

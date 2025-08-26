@@ -57,7 +57,7 @@ const FloatingDockMobile = ({
         className
       )}
     >
-      <div className="flex items-center justify-around max-w-md mx-auto">
+      <div className="flex items-center justify-center max-w-md mx-auto">
         {items.map((item, index) => (
           <motion.a
             key={item.title}

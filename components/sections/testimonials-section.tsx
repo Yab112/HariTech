@@ -75,14 +75,14 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50 dark:bg-[#000515]">
+    <section className="py-12 sm:py-24 pb-2 sm:pb-24 px-2 sm:px-6 bg-slate-50 dark:bg-[#000515]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-20"
+          className="text-center mb-8 sm:mb-20"
         >
           <Badge
             variant="secondary"
@@ -91,10 +91,10 @@ export function TestimonialsSection() {
             <Sparkles className="w-4 h-4 mr-2" />
             Client Testimonials
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-2xl sm:text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6">
             Trusted by Industry Leaders
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             Discover why Fortune 500 companies and high-growth startups choose Hari Tech for their most critical technology projects.
           </p>
         </motion.div>
@@ -102,11 +102,11 @@ export function TestimonialsSection() {
         {/* Horizontal Infinite Scroll Testimonials */}
         <div className="relative overflow-hidden">
           {/* Gradient Overlays for Smooth Edges */}
-          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 w-8 sm:w-20 h-full bg-gradient-to-r from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-8 sm:w-20 h-full bg-gradient-to-l from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
           
           {/* Infinite Scroll Container */}
-          <div className="flex space-x-8 animate-scroll">
+          <div className="flex space-x-2 sm:space-x-4 md:space-x-8 animate-scroll">
             {/* First Set */}
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -115,32 +115,32 @@ export function TestimonialsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex-shrink-0 w-96"
+                className="flex-shrink-0 w-64 sm:w-80 md:w-96 h-48"
               >
-                <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 h-full">
+                <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 sm:p-6 h-full">
                   {/* Rating Stars */}
-                  <div className="flex items-center mb-4">
+                  <div className="flex items-center mb-3 sm:mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 text-yellow-400 fill-current" />
                     ))}
-                    <span className="ml-2 text-sm text-slate-600 dark:text-slate-400">
+                    <span className="ml-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
                       {testimonial.rating}.0
                     </span>
                   </div>
 
                   {/* Testimonial Content */}
-                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-6 text-sm">
+                  <p className="text-slate-700 dark:text-slate-300 leading-relaxed mb-2 sm:mb-6 text-xs sm:text-sm line-clamp-3 sm:line-clamp-none">
                     "{testimonial.content}"
                   </p>
 
                   {/* Client Information */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center">
-                        <User className="w-5 h-5 text-slate-600 dark:text-slate-400" />
+                    <div className="flex items-center space-x-2 sm:space-x-3">
+                      <div className="w-8 h-8 sm:w-10 sm:h-10 bg-slate-100 dark:bg-slate-700 rounded-full flex items-center justify-center">
+                        <User className="w-4 h-4 sm:w-5 sm:h-5 text-slate-600 dark:text-slate-400" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-slate-900 dark:text-white text-sm">
+                        <h4 className="font-semibold text-slate-900 dark:text-white text-xs sm:text-sm">
                           {testimonial.client}
                         </h4>
                         <p className="text-xs text-slate-600 dark:text-slate-400">
@@ -172,9 +172,9 @@ export function TestimonialsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex-shrink-0 w-96"
+                className="flex-shrink-0 w-64 sm:w-80 md:w-96"
               >
-                <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 h-full">
+                <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 sm:p-6 h-full">
                   {/* Rating Stars */}
                   <div className="flex items-center mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -234,10 +234,29 @@ export function TestimonialsSection() {
           }
         }
         .animate-scroll {
-          animation: scroll 60s linear infinite;
+          animation: scroll 40s linear infinite;
+        }
+        @media (max-width: 640px) {
+          .animate-scroll {
+            animation: scroll 60s linear infinite;
+          }
         }
         .animate-scroll:hover {
           animation-play-state: paused;
+        }
+        .line-clamp-3 {
+          display: -webkit-box;
+          -webkit-line-clamp: 3;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        @media (min-width: 640px) {
+          .line-clamp-none {
+            display: block;
+            -webkit-line-clamp: unset;
+            -webkit-box-orient: unset;
+            overflow: visible;
+          }
         }
       `}</style>
     </section>

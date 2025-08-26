@@ -28,7 +28,7 @@ const Stat = () => {
       transition={{ delay: 1 }}
       className="w-full mx-auto bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 "
     >
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
@@ -40,13 +40,13 @@ const Stat = () => {
               stiffness: 200,
             }}
             whileHover={{ scale: 1.05, rotate: 2 }}
-            className="text-center p-3 sm:p-4  "
+            className="text-center p-2 sm:p-3 md:p-4"
           >
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5 + index * 0.1 }}
-              className="text-sm sm:text-5xl font-black text-blue-600 dark:text-blue-400"
+              className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-black text-blue-600 dark:text-blue-400"
             >
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
@@ -66,7 +66,7 @@ const Stat = () => {
                   : ""}
               </motion.span>
             </motion.div>
-            <div className="text-xs sm:text-2xl text-slate-700 dark:text-slate-200 font-semibold mt-1">
+            <div className="text-xs sm:text-sm md:text-lg lg:text-2xl text-slate-700 dark:text-slate-200 font-semibold mt-1">
               {stat.label}
             </div>
             <div className="text-xs text-slate-500 dark:text-slate-400">

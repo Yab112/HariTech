@@ -22,7 +22,7 @@ export function StatusBar() {
   }, [])
 
   return (
-    <div className="fixed top-2 right-6 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur-lg  rounded-3xl p-3    border border-slate-200 dark:border-slate-700">
+    <div className="hidden sm:block fixed top-2 right-6 z-40 bg-white/90 dark:bg-slate-800/90 backdrop-blur-lg  rounded-3xl p-3    border border-slate-200 dark:border-slate-700">
       <div className="flex items-center space-x-4 text-xs">
         <div className="flex items-center space-x-1">
           <Eye className="w-3 h-3 text-slate-500" />

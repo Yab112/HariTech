@@ -71,9 +71,9 @@ const CalendlyEmbed = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#000515] dark:to-slate-900" id="book-me">
+    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#000515] dark:to-slate-900" id="book-me">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 sm:mb-12">
           <span className="inline-block px-6 py-3 text-sm font-semibold bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700 rounded-full">
             🚀 Free 30-Min Discovery Call
           </span>
@@ -120,15 +120,15 @@ const CalendlyEmbed = () => {
                 className="text-center"
               >
                 <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Select a Date</h4>
-                <div className="grid grid-cols-7 gap-2">
+                <div className="grid grid-cols-7 gap-1 sm:gap-2">
                   {getNextDays().map((day) => (
                     <button
                       key={day.date}
                       onClick={() => handleDateSelect(day.date)}
-                      className="p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors bg-white dark:bg-slate-700"
+                      className="p-2 sm:p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors bg-white dark:bg-slate-700"
                     >
                       <div className="text-xs text-gray-500 dark:text-slate-400">{day.day}</div>
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white">{day.dayNum}</div>
+                      <div className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white">{day.dayNum}</div>
                       <div className="text-xs text-gray-500 dark:text-slate-400">{day.month}</div>
                     </button>
                   ))}
@@ -159,12 +159,12 @@ const CalendlyEmbed = () => {
                     day: 'numeric' 
                   })}
                 </p>
-                <div className="grid grid-cols-3 gap-3 max-h-64 overflow-y-auto">
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 max-h-64 overflow-y-auto">
                   {timeSlots.map((time) => (
                     <button
                       key={time}
                       onClick={() => handleTimeSelect(time)}
-                      className="p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-sm bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="p-2 sm:p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-xs sm:text-sm bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     >
                       {time}
                     </button>
@@ -213,7 +213,7 @@ const CalendlyEmbed = () => {
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
                     />
                   </div>
                   <div>
@@ -224,7 +224,7 @@ const CalendlyEmbed = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
                     />
                   </div>
                   <div>
@@ -234,7 +234,7 @@ const CalendlyEmbed = () => {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
                     />
                   </div>
                   <div>
@@ -244,7 +244,7 @@ const CalendlyEmbed = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
                     />
                   </div>
                   <div>
@@ -254,7 +254,7 @@ const CalendlyEmbed = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={3}
-                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
                       placeholder="Tell us about your project..."
                     />
                   </div>

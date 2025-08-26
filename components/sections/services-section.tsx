@@ -14,18 +14,18 @@ export function ServicesSection() {
     icon: <service.icon className="w-6 h-6" />,
     value: service.title.toLowerCase().replace(/\s+/g, "-"),
     content: (
-      <WobbleCard
-        containerClassName="h-full min-h-[600px] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
-        className="p-8 sm:p-10"
-      >
+              <WobbleCard
+          containerClassName="h-full min-h-[500px] md:min-h-[600px] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
+          className="p-4 sm:p-6 md:p-8 lg:p-10"
+        >
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.05),transparent_50%)]" />
         </div>
 
-        {/* Creative Image Layout - Double Images */}
-        <div className="absolute inset-0 pointer-events-none">
+        {/* Creative Image Layout - Double Images - Hidden on small screens */}
+        <div className="absolute inset-0 pointer-events-none hidden md:block">
           {/* Large Background Image (Shadow Effect) */}
           <motion.div
             className="absolute inset-0 flex items-center justify-center"
@@ -66,7 +66,7 @@ export function ServicesSection() {
         </div>
 
         {/* Content Overlay - Left Side */}
-        <div className="relative z-20 max-w-lg">
+        <div className="relative z-20 max-w-lg md:max-w-lg w-full">
           {/* Service Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -95,7 +95,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-3 leading-tight"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight"
           >
             {service.title}
           </motion.h3>
@@ -105,7 +105,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-base text-slate-300 mb-6 leading-relaxed"
+            className="text-sm sm:text-base text-slate-300 mb-4 sm:mb-6 leading-relaxed"
           >
             {service.description}
           </motion.p>
@@ -115,7 +115,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="space-y-3 mb-8"
+            className="space-y-2 sm:space-y-3 mb-6 sm:mb-8"
           >
             {service.features.map((feature, idx) => (
               <motion.div
@@ -128,7 +128,7 @@ export function ServicesSection() {
                 <div className="w-5 h-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
                   <CheckCircle className="w-3 h-3 text-white" />
                 </div>
-                <span className="text-sm font-medium group-hover:text-white transition-colors">
+                <span className="text-xs sm:text-sm font-medium group-hover:text-white transition-colors">
                   {feature}
                 </span>
               </motion.div>
@@ -140,17 +140,17 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex items-center space-x-4"
+            className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4"
           >
             <Button
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
+              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
             >
               Explore Service
               <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button
               variant="outline"
-              className="text-white border-white/30 hover:bg-white/10 hover:text-white transition-all duration-300"
+              className="text-white border-white/30 hover:bg-white/10 hover:text-white transition-all duration-300 w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
             >
               Get Quote
             </Button>
@@ -227,7 +227,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed"
+            className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed"
           >
             We leverage the latest technologies and innovative approaches to create solutions that not only meet your needs 
             but exceed your expectations, driving unprecedented business growth and competitive advantage.

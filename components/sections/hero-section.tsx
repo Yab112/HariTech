@@ -92,7 +92,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
       <div className="absolute inset-0 overflow-hidden">
         {/* Large Circle */}
         <motion.div
-          className="absolute w-96 h-96 bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl"
+          className="absolute w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"
           style={{ top: '10%', left: '5%' }}
           animate={{
             scale: [1, 1.2, 1],
@@ -108,7 +108,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
         {/* Medium Circle */}
         <motion.div
-          className="absolute w-64 h-64 bg-gradient-to-r from-emerald-400/10 to-cyan-400/10 rounded-full blur-3xl"
+          className="absolute w-64 h-64 bg-gradient-to-r from-emerald-400/10 to-cyan-400/20 rounded-full blur-3xl"
           style={{ top: '60%', right: '10%' }}
           animate={{
             scale: [1.2, 1, 1.2],
@@ -252,7 +252,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8 }}
-          className="flex flex-col items-center justify-center mb-4 md:mb-6"
+          className="flex flex-col items-center justify-center mb-2 sm:mb-4 md:mb-6"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
@@ -271,167 +271,18 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-4 md:gap-8 items-center min-h-[calc(100vh-200px)] lg:h-[calc(100vh-120px)]">
-                    {/* Left Side - Professional Tech Visual */}
+        <div className="flex flex-col justify-center items-center min-h-[calc(100vh-120px)] sm:min-h-[calc(100vh-140px)] lg:min-h-[calc(100vh-160px)]">
+          {/* Main Content - Centered */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="relative flex items-center justify-center order-2 lg:order-1"
-          >
-            {/* Professional Code Editor Interface */}
-            <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-lg">
-              {/* Main Editor Window */}
-              <motion.div
-                className="bg-white dark:bg-slate-800 rounded-xl shadow-2xl border border-slate-200 dark:border-slate-700 overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                {/* Editor Header */}
-                <div className="bg-slate-100 dark:bg-slate-700 px-4 py-3 flex items-center justify-between">
-                  <div className="flex items-center space-x-2">
-                    <div className="w-3 h-3 bg-red-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                    <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  </div>
-                  <div className="text-sm text-slate-600 dark:text-slate-400 font-medium">
-                    app.js — Hari Tech
-                  </div>
-                </div>
-
-                {/* Code Content */}
-                <div className="p-4 sm:p-6 font-mono text-xs sm:text-sm">
-                  <div className="space-y-2 sm:space-y-3">
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">1</span>
-                      <span className="text-blue-600">import</span> <span className="text-slate-800 dark:text-slate-200">React</span> <span className="text-slate-600">from</span> <span className="text-green-600">'react'</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">2</span>
-                      <span className="text-blue-600">import</span> <span className="text-slate-800 dark:text-slate-200">{'{'}</span> <span className="text-purple-600">useState</span> <span className="text-slate-800 dark:text-slate-200">{'}'}</span> <span className="text-slate-600">from</span> <span className="text-green-600">'react'</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">3</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">4</span>
-                      <span className="text-blue-600">function</span> <span className="text-yellow-600">App</span><span className="text-slate-800 dark:text-slate-200">() {'{'}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">5</span>
-                      <span className="text-blue-600">const</span> <span className="text-slate-800 dark:text-slate-200">[</span><span className="text-purple-600">count</span><span className="text-slate-800 dark:text-slate-200">, setCount] =</span> <span className="text-yellow-600">useState</span><span className="text-slate-800 dark:text-slate-200">(0)</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">6</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">7</span>
-                      <span className="text-blue-600">return</span> <span className="text-slate-800 dark:text-slate-200">(</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">8</span>
-                      <span className="text-slate-800 dark:text-slate-200">&lt;</span><span className="text-purple-600">div</span><span className="text-slate-800 dark:text-slate-200">&gt;</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">9</span>
-                      <span className="text-slate-800 dark:text-slate-200">&lt;</span><span className="text-purple-600">h1</span><span className="text-slate-800 dark:text-slate-200">&gt;Hari Tech&lt;/</span><span className="text-purple-600">h1</span><span className="text-slate-800 dark:text-slate-200">&gt;</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">10</span>
-                      <span className="text-slate-800 dark:text-slate-200">&lt;</span><span className="text-purple-600">button</span> <span className="text-blue-600">onClick</span><span className="text-slate-800 dark:text-slate-200">=</span><span className="text-slate-600">{'() =>'}</span> <span className="text-yellow-600">setCount</span><span className="text-slate-800 dark:text-slate-200">(count + 1){"}"}&gt;</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">11</span>
-                      <span className="text-slate-800 dark:text-slate-200">Count: {'{'}count{'}'}</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">12</span>
-                      <span className="text-slate-800 dark:text-slate-200">&lt;/</span><span className="text-purple-600">button</span><span className="text-slate-800 dark:text-slate-200">&gt;</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">13</span>
-                      <span className="text-slate-800 dark:text-slate-200">&lt;/</span><span className="text-purple-600">div</span><span className="text-slate-800 dark:text-slate-200">&gt;</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">14</span>
-                      <span className="text-slate-800 dark:text-slate-200">)</span>
-                    </div>
-                    <div className="flex">
-                      <span className="text-slate-400 mr-4 w-8">15</span>
-                      <span className="text-slate-800 dark:text-slate-200">{'}'}</span>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Floating Status Indicators */}
-              <motion.div
-                className="absolute -top-4 -right-4 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 px-3 py-2"
-                animate={{
-                  y: [0, -5, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs font-medium text-slate-700 dark:text-slate-300">24/7 Support</span>
-                </div>
-              </motion.div>
-
-              <motion.div
-                className="absolute -bottom-4 -left-4 bg-white dark:bg-slate-800 rounded-lg shadow-lg border border-slate-200 dark:border-slate-700 px-3 py-2"
-                animate={{
-                  y: [0, 5, 0],
-                }}
-                transition={{
-                  duration: 4,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                  delay: 1,
-                }}
-              >
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-                  <span className="text-xs font-medium text-slate-700 dark:text-slate-300">Agile Development</span>
-                </div>
-              </motion.div>
-
-              {/* Performance Badge */}
-              <motion.div
-                className="absolute top-1/2 -right-8 bg-emerald-500 text-white rounded-lg shadow-lg px-3 py-2"
-                animate={{
-                  x: [0, 3, 0],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Number.POSITIVE_INFINITY,
-                  ease: "easeInOut",
-                }}
-              >
-                <div className="text-center">
-                  <div className="text-sm font-bold">99.9%</div>
-                  <div className="text-xs opacity-90">Uptime</div>
-                </div>
-              </motion.div>
-            </div>
-          </motion.div>
-
-          {/* Right Side - Text Content */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex flex-col justify-center order-1 lg:order-2 text-center lg:text-left"
+            className="flex flex-col justify-center text-center max-w-4xl mx-auto"
           >
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
               <Badge
                 variant="secondary"
-                className="mb-4 md:mb-6 px-3 md:px-4 py-1 md:py-2 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 backdrop-blur-md w-fit text-xs md:text-sm"
+                className="mb-4 md:mb-6 px-3 md:px-4 py-1 md:py-2 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 backdrop-blur-md w-fit text-xs md:text-sm mx-auto"
               >
                 <TrendingUp className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
                 Leading Software Development Company
@@ -442,10 +293,10 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-slate-900 dark:text-white mb-4 md:mb-6 leading-tight"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-8xl xl:text-5xl font-black text-slate-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
             >
               <span className="block text-slate-900 dark:text-white">
-                All IT-related services<br />
+                All IT-related services<br className="hidden sm:block" />
                 <span className="text-blue-600">good facilitate providers</span>
               </span>
             </motion.h1>
@@ -454,7 +305,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
-              className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-lg mx-auto lg:mx-0"
+              className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-lg mx-auto"
             >
               We craft cutting-edge software solutions that transform businesses. From AI-powered applications to 
               enterprise-grade systems, we deliver innovative technology that drives growth and competitive advantage.
@@ -465,10 +316,10 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1 }}
-              className="space-y-2 mb-6 md:mb-8"
+              className="space-y-2 mb-6 md:mb-8 mx-auto flex sm:flex-col flex-row"
             >
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+              <div className="flex items-center space-x-1">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-in"></div>
                 <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium">24/7 IT Support</span>
               </div>
               <div className="flex items-center space-x-3">
@@ -485,11 +336,11 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center"
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
-                  className="border-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 hover:bg-slate-800 dark:hover:bg-slate-100 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base transition-all duration-300"
+                  className="border-none bg-slate-900 dark:bg-transparent border-2 border-slate-500 cursor-pointer font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 w-full sm:w-auto"
                   onClick={() => scrollToSection("contact")}
                 >
                   Get started →
@@ -498,7 +349,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
-                  className="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-sm sm:text-base transition-all duration-300"
+                  className="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 w-full sm:w-auto"
                   onClick={() => scrollToSection("about")}
                 >
                   See More →
@@ -507,20 +358,6 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Social Media Icons - Bottom */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center space-x-6"
-        >
-          <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">facebook</div>
-          <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Google</div>
-          <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Instagram</div>
-          <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">Pinterest</div>
-          <div className="text-sm text-slate-500 dark:text-slate-400 font-medium">WhatsApp</div>
-        </motion.div>
       </div>
     </section>
   )
