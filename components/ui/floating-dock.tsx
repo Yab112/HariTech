@@ -57,7 +57,7 @@ const FloatingDockMobile = ({
         className
       )}
     >
-      <div className="flex items-center justify-center max-w-md mx-auto">
+      <div className="flex items-center justify-center w-full max-w-md mx-auto">
         {items.map((item, index) => (
           <motion.a
             key={item.title}
@@ -82,7 +82,7 @@ const FloatingDockMobile = ({
               mass: 0.5,
             }}
             whileTap={{ scale: 0.95 }}
-            className="group relative flex flex-col items-center justify-center p-3 rounded-2xl transition-all duration-200 min-w-[60px]"
+            className="group relative flex flex-col items-center justify-center p-3 mb-2  rounded-2xl transition-all duration-200 flex-1"
           >
             {/* Background highlight */}
             <motion.div
@@ -100,7 +100,7 @@ const FloatingDockMobile = ({
 
             {/* Icon */}
             <motion.div
-              className={`relative z-10 h-6 w-6 transition-colors duration-200 mb-1 ${
+              className={`relative z-10 h-6 w-6 transition-colors duration-200  ${
                 item.isActive
                   ? "text-blue-600 dark:text-blue-400"
                   : "text-slate-600 dark:text-slate-400 group-hover:text-blue-600 dark:group-hover:text-blue-400"

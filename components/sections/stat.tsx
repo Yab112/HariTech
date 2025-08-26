@@ -46,7 +46,7 @@ const Stat = () => {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.5 + index * 0.1 }}
-              className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-black text-blue-600 dark:text-blue-400"
+              className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 dark:text-slate-100"
             >
               <motion.span
                 initial={{ opacity: 0, y: 10 }}

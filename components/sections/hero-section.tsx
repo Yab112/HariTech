@@ -282,9 +282,9 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
               <Badge
                 variant="secondary"
-                className="mb-4 md:mb-6 px-3 md:px-4 py-1 md:py-2 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 backdrop-blur-md w-fit text-xs md:text-sm mx-auto"
+                className="mb-4 md:mb-6 px-3 md:px-4 py-1 md:py-2 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 backdrop-blur-md w-fit text-xs md:text-sm lg:text-base mx-auto"
               >
-                <TrendingUp className="w-3 h-3 md:w-4 md:h-4 mr-1 md:mr-2" />
+                <TrendingUp className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-1 md:mr-2" />
                 Leading Software Development Company
               </Badge>
             </motion.div>
@@ -293,7 +293,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-xl sm:text-2xl md:text-3xl lg:text-8xl xl:text-5xl font-black text-slate-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
+              className="text-xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-slate-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
             >
               <span className="block text-slate-900 dark:text-white">
                 All IT-related services<br className="hidden sm:block" />
@@ -305,32 +305,14 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
-              className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-lg mx-auto"
+              className="text-xs sm:text-sm md:text-lg lg:text-xl text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-2xl mx-auto"
             >
               We craft cutting-edge software solutions that transform businesses. From AI-powered applications to 
               enterprise-grade systems, we deliver innovative technology that drives growth and competitive advantage.
             </motion.p>
 
             {/* Key Features */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.1 }}
-              className="space-y-2 mb-6 md:mb-8 mx-auto flex sm:flex-col flex-row"
-            >
-              <div className="flex items-center space-x-1">
-                <div className="w-2 h-2 bg-green-500 rounded-full animate-in"></div>
-                <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium">24/7 IT Support</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium">Free Assessment</span>
-              </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-medium">Expert Consultation</span>
-              </div>
-            </motion.div>
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -340,7 +322,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
-                  className="border-none bg-slate-900 dark:bg-transparent border-2 border-slate-500 cursor-pointer font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 w-full sm:w-auto"
+                  className="border-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 w-full sm:w-auto hover:bg-slate-800 dark:hover:bg-slate-100"
                   onClick={() => scrollToSection("contact")}
                 >
                   Get started →
@@ -349,7 +331,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
-                  className="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base transition-all duration-300 w-full sm:w-auto"
+                  className="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 w-full sm:w-auto"
                   onClick={() => scrollToSection("about")}
                 >
                   See More →

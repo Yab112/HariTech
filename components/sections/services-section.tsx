@@ -133,28 +133,7 @@ export function ServicesSection() {
                 </span>
               </motion.div>
             ))}
-          </motion.div>
-
-          {/* Call to Action */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
-            className="flex flex-col sm:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-4"
-          >
-            <Button
-              className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-300 group w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
-            >
-              Explore Service
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button
-              variant="outline"
-              className="text-white border-white/30 hover:bg-white/10 hover:text-white transition-all duration-300 w-full sm:w-auto text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
-            >
-              Get Quote
-            </Button>
-          </motion.div>
+          </motion.div> 
         </div>
 
         {/* Floating Elements */}

@@ -61,7 +61,7 @@ text: "Check out Hari Tech for amazing software solutions!",
         onMouseEnter={() => setShowTooltip("like")}
         onMouseLeave={() => setShowTooltip("")}
         className={`relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center ${
-          isLiked ? "bg-red-500 text-white" : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+          isLiked ? "bg-red-500 text-white" : "bg-white dark:bg-white text-slate-600 dark:text-slate-900"
         }`}
       >
         <ThumbsUp className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${isLiked ? "fill-current" : ""}`} />
@@ -79,7 +79,7 @@ text: "Check out Hari Tech for amazing software solutions!",
         onMouseEnter={() => setShowTooltip("bookmark")}
         onMouseLeave={() => setShowTooltip("")}
         className={`relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center ${
-          isBookmarked ? "bg-blue-500 text-white" : "bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300"
+          isBookmarked ? "bg-blue-500 text-white" : "bg-white dark:bg-white text-slate-600 dark:text-slate-900"
         }`}
       >
         <Bookmark className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ${isBookmarked ? "fill-current" : ""}`} />
@@ -96,7 +96,7 @@ text: "Check out Hari Tech for amazing software solutions!",
         onClick={handleShare}
         onMouseEnter={() => setShowTooltip("share")}
         onMouseLeave={() => setShowTooltip("")}
-        className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
+        className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white dark:bg-white text-slate-600 dark:text-slate-900 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center"
       >
         <Share2 className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5" />
         {showTooltip === "share" && (

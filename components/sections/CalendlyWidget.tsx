@@ -109,7 +109,7 @@ const CalendlyEmbed = () => {
                 </div>
               ))}
             </div>
-          </div>
+        </div>
 
           {/* Step Content */}
           <div className="p-6">
@@ -308,18 +308,12 @@ const CalendlyEmbed = () => {
                 </button>
               </motion.div>
             )}
-          </div>
+        </div>
         </div>
 
         <p className="text-center text-sm text-gray-400 dark:text-slate-500 mt-6">
           No pressure. No obligations. Just a friendly chat. 🌟
         </p>
-
-        <div className="mt-12 flex justify-center items-center flex-wrap gap-8 opacity-70">
-          <FaStripe className="h-6 text-gray-600 dark:text-slate-400" />
-          <FaSpotify className="h-6 text-gray-600 dark:text-slate-400" />
-          <FaShopify className="h-6 text-gray-600 dark:text-slate-400" />
-        </div>
       </div>
     </section>
   );

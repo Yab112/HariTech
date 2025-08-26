@@ -138,8 +138,8 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
   ];
 
   return (
-    <section id="contact" className="pt-2 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 bg-white dark:bg-[#000515]">
-      <div className="max-w-7xl mx-auto">
+         <section id="contact" className="pt-2 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 bg-white dark:bg-[#000515]">
+              <div className="w-full mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,75 +162,76 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-8 sm:gap-12 md:gap-16">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 w-full">
-              <div className="relative p-4 sm:p-6 md:p-8">
+                                   <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12">
+           <motion.div
+             initial={{ opacity: 0, x: -50 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+             className="w-full lg:w-2/3"
+           >
+             <div className="relative overflow-hidden rounded-xl border border-slate-200 dark:border-slate-700 w-full">
+                             <div className="relative p-4 sm:p-6">
                 <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8 flex items-center">
                   <Rocket className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3 text-blue-600" />
                   Send us a message
                 </h3>
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                    <motion.div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        Full Name *
-                      </label>
-                      <Input
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleInputChange}
-                        placeholder="Full Name"
-                        required
-                        className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
-                      />
-                    </motion.div>
-                    <motion.div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        Work Email *
-                      </label>
-                      <Input
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="you@email.com"
-                        required
-                        className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
-                      />
-                    </motion.div>
-                  </div>
-                  <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                    <motion.div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        Company Name *
-                      </label>
-                      <Input
-                        name="companyName"
-                        value={formData.companyName}
-                        onChange={handleInputChange}
-                        placeholder="Company Name"
-                        required
-                        className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
-                      />
-                    </motion.div>
-                    <motion.div className="space-y-2">
-                      <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                        Phone Number
-                      </label>
-                      <Input
-                        name="phoneNumber"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        placeholder="+251911906245"
-                        className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
-                      />
-                    </motion.div>
-                  </div>
+                                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                                     <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
+                     <motion.div className="space-y-2">
+                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                         Full Name *
+                       </label>
+                       <Input
+                         name="fullName"
+                         value={formData.fullName}
+                         onChange={handleInputChange}
+                         placeholder="Full Name"
+                         required
+                         className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
+                       />
+                     </motion.div>
+                     <motion.div className="space-y-2">
+                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                         Work Email *
+                       </label>
+                       <Input
+                         name="email"
+                         type="email"
+                         value={formData.email}
+                         onChange={handleInputChange}
+                         placeholder="you@email.com"
+                         required
+                         className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
+                       />
+                     </motion.div>
+                   </div>
+                                     <div className="grid md:grid-cols-2 gap-3 sm:gap-4">
+                     <motion.div className="space-y-2">
+                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                         Company Name *
+                       </label>
+                       <Input
+                         name="companyName"
+                         value={formData.companyName}
+                         onChange={handleInputChange}
+                         placeholder="Company Name"
+                         required
+                         className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
+                       />
+                     </motion.div>
+                     <motion.div className="space-y-2">
+                       <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                         Phone Number
+                       </label>
+                       <Input
+                         name="phoneNumber"
+                         value={formData.phoneNumber}
+                         onChange={handleInputChange}
+                         placeholder="+251911906245"
+                         className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
+                       />
+                     </motion.div>
+                   </div>
                   <motion.div className="space-y-2">
                     <label className="text-sm font-medium text-slate-700 dark:text-slate-300">
                       Project Budget
@@ -289,12 +290,12 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
             </div>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="space-y-4 sm:space-y-6 md:space-y-8"
-          >
+                     <motion.div
+             initial={{ opacity: 0, x: 50 }}
+             whileInView={{ opacity: 1, x: 0 }}
+             viewport={{ once: true }}
+                           className="w-full lg:w-1/3 space-y-3 sm:space-y-4 md:space-y-6"
+           >
             {contactInfo.map((contact, index) => (
               <motion.div
                 key={index}
@@ -307,13 +308,9 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
               >
                 <div className="relative overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all duration-300 p-4 sm:p-6">
                   <div className="relative flex items-start space-x-3 sm:space-x-4">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 360 }}
-                      transition={{ duration: 0.5 }}
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0"
-                    >
-                      <contact.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    </motion.div>
+                                         <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+                       <contact.icon className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
+                     </div>
                     <div>
                       <h4 className="font-bold text-slate-900 dark:text-white text-base sm:text-lg mb-1 group-hover:text-blue-600 transition-colors">
                         {contact.title}
@@ -335,9 +332,9 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
               viewport={{ once: true }}
               className="relative overflow-hidden rounded-2xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 transition-all duration-300 p-4 sm:p-6 flex items-center"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-600 rounded-xl flex items-center justify-center mr-3 sm:mr-4">
-                <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-              </div>
+                             <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mr-3 sm:mr-4">
+                 <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600 dark:text-blue-400" />
+               </div>
               <div>
                 <h4 className="font-bold text-slate-900 dark:text-white text-base sm:text-lg mb-1">
                   Book a Meeting

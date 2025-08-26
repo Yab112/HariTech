@@ -153,7 +153,7 @@ export function SolutionsSection() {
                 >
                   <div className="text-center bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl p-3 sm:p-6 shadow-sm sm:shadow-md h-full">
                     {/* Icon - Hidden on small screens */}
-                    <div className="hidden sm:block w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-slate-100 dark:bg-slate-800 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                    <div className="sm:block w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-transparent dark:bg-slate-800 rounded-xl sm:rounded-2xl flex items-center justify-center">
                       <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400" />
                     </div>
                     
