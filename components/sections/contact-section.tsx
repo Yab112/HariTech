@@ -138,13 +138,13 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 bg-white dark:bg-slate-900">
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-[#000515]">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
           <Badge
             variant="secondary"

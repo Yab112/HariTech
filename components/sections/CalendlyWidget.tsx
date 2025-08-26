@@ -71,15 +71,15 @@ const CalendlyEmbed = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-slate-50 to-white" id="book-me">
-      <div className="max-w-6xl mx-auto px-6">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#000515] dark:to-slate-900" id="book-me">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <span className="inline-block px-6 py-3 text-sm font-semibold bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700 rounded-full">
             🚀 Free 30-Min Discovery Call
           </span>
         </div>
 
-        <div className="rounded-2xl border border-gray-200 overflow-hidden transition-all duration-300 bg-white ">
+        <div className="rounded-2xl border border-gray-200 dark:border-slate-700 overflow-hidden transition-all duration-300 bg-white dark:bg-slate-800">
           {/* Header */}
           <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
             <div className="flex items-center space-x-3">
@@ -94,17 +94,17 @@ const CalendlyEmbed = () => {
           </div>
 
           {/* Progress Steps */}
-          <div className="flex items-center justify-center p-4 border-b">
+          <div className="flex items-center justify-center p-4 border-b border-gray-200 dark:border-slate-700">
             <div className="flex items-center space-x-2">
               {[1, 2, 3, 4].map((stepNum) => (
                 <div key={stepNum} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                    step >= stepNum ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-500'
+                    step >= stepNum ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-slate-700 text-gray-500 dark:text-slate-400'
                   }`}>
                     {stepNum}
                   </div>
                   {stepNum < 4 && (
-                    <div className={`w-8 h-0.5 mx-2 ${step > stepNum ? 'bg-blue-600' : 'bg-gray-200'}`} />
+                    <div className={`w-8 h-0.5 mx-2 ${step > stepNum ? 'bg-blue-600' : 'bg-gray-200 dark:bg-slate-600'}`} />
                   )}
                 </div>
               ))}
@@ -119,17 +119,17 @@ const CalendlyEmbed = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-center"
               >
-                <h4 className="text-lg font-semibold text-gray-900 mb-4">Select a Date</h4>
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Select a Date</h4>
                 <div className="grid grid-cols-7 gap-2">
                   {getNextDays().map((day) => (
                     <button
                       key={day.date}
                       onClick={() => handleDateSelect(day.date)}
-                      className="p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-colors"
+                      className="p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors bg-white dark:bg-slate-700"
                     >
-                      <div className="text-xs text-gray-500">{day.day}</div>
-                      <div className="text-lg font-semibold text-gray-900">{day.dayNum}</div>
-                      <div className="text-xs text-gray-500">{day.month}</div>
+                      <div className="text-xs text-gray-500 dark:text-slate-400">{day.day}</div>
+                      <div className="text-lg font-semibold text-gray-900 dark:text-white">{day.dayNum}</div>
+                      <div className="text-xs text-gray-500 dark:text-slate-400">{day.month}</div>
                     </button>
                   ))}
                 </div>
@@ -149,9 +149,9 @@ const CalendlyEmbed = () => {
                   >
                     ← Back
                   </button>
-                  <h4 className="text-lg font-semibold text-gray-900">Select a Time</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Select a Time</h4>
                 </div>
-                <p className="text-sm text-gray-600 mb-6">
+                <p className="text-sm text-gray-600 dark:text-slate-400 mb-6">
                   {new Date(selectedDate).toLocaleDateString('en-US', { 
                     weekday: 'long', 
                     year: 'numeric', 
@@ -164,7 +164,7 @@ const CalendlyEmbed = () => {
                     <button
                       key={time}
                       onClick={() => handleTimeSelect(time)}
-                      className="p-3 rounded-lg border border-gray-200 hover:border-blue-500 hover:bg-blue-50 transition-colors text-sm"
+                      className="p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-sm bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     >
                       {time}
                     </button>
@@ -185,10 +185,10 @@ const CalendlyEmbed = () => {
                   >
                     ← Back
                   </button>
-                  <h4 className="text-lg font-semibold text-gray-900">Enter Details</h4>
+                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Enter Details</h4>
                 </div>
-                <div className="bg-gray-50 p-4 rounded-lg mb-6">
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                <div className="bg-gray-50 dark:bg-slate-700 p-4 rounded-lg mb-6">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400">
                     <FaCalendar className="w-4 h-4" />
                     <span>
                       {new Date(selectedDate).toLocaleDateString('en-US', { 
@@ -199,62 +199,62 @@ const CalendlyEmbed = () => {
                       })}
                     </span>
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 mt-1">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400 mt-1">
                     <FaClock className="w-4 h-4" />
                     <span>{selectedTime}</span>
                   </div>
                 </div>
                 <form onSubmit={handleFormSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Name *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Name *</label>
                     <input
                       type="text"
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Email *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Company</label>
                     <input
                       type="text"
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Phone</label>
                     <input
                       type="tel"
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Message</label>
                     <textarea
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
                       rows={3}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      className="w-full p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
                       placeholder="Tell us about your project..."
                     />
                   </div>
@@ -274,17 +274,17 @@ const CalendlyEmbed = () => {
                 animate={{ opacity: 1, y: 0 }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900 mb-2">Meeting Scheduled!</h4>
-                <p className="text-gray-600 mb-6">
+                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Meeting Scheduled!</h4>
+                <p className="text-gray-600 dark:text-slate-400 mb-6">
                   We've sent a confirmation email to {formData.email} with meeting details.
                 </p>
-                <div className="bg-gray-50 p-4 rounded-lg mb-6">
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 mb-2">
+                <div className="bg-gray-50 dark:bg-slate-700 p-4 rounded-lg mb-6">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400 mb-2">
                     <FaCalendar className="w-4 h-4" />
                     <span>
                       {new Date(selectedDate).toLocaleDateString('en-US', { 
@@ -295,7 +295,7 @@ const CalendlyEmbed = () => {
                       })}
                     </span>
                   </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400">
                     <FaClock className="w-4 h-4" />
                     <span>{selectedTime}</span>
                   </div>
@@ -311,14 +311,14 @@ const CalendlyEmbed = () => {
           </div>
         </div>
 
-        <p className="text-center text-sm text-gray-400 mt-6">
+        <p className="text-center text-sm text-gray-400 dark:text-slate-500 mt-6">
           No pressure. No obligations. Just a friendly chat. 🌟
         </p>
 
         <div className="mt-12 flex justify-center items-center flex-wrap gap-8 opacity-70">
-          <FaStripe className="h-6" />
-          <FaSpotify className="h-6" />
-          <FaShopify className="h-6" />
+          <FaStripe className="h-6 text-gray-600 dark:text-slate-400" />
+          <FaSpotify className="h-6 text-gray-600 dark:text-slate-400" />
+          <FaShopify className="h-6 text-gray-600 dark:text-slate-400" />
         </div>
       </div>
     </section>

@@ -75,14 +75,14 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-24 px-6 bg-slate-50 dark:bg-slate-900">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 bg-slate-50 dark:bg-[#000515]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
           <Badge
             variant="secondary"
@@ -102,8 +102,8 @@ export function TestimonialsSection() {
         {/* Horizontal Infinite Scroll Testimonials */}
         <div className="relative overflow-hidden">
           {/* Gradient Overlays for Smooth Edges */}
-          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-slate-50 dark:from-slate-900 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-slate-50 dark:from-slate-900 to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
           
           {/* Infinite Scroll Container */}
           <div className="flex space-x-8 animate-scroll">

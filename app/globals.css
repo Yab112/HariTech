@@ -17,10 +17,12 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   color: #334155;
+  background-color: #ffffff;
 }
 
 .dark body {
   color: #cbd5e1;
+  background-color: #000515;
 }
 
 

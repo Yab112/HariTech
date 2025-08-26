@@ -84,14 +84,14 @@ export function SolutionsSection() {
   }
 
   return (
-    <section id="solutions" className="py-24 px-6 bg-white dark:bg-slate-900">
+    <section id="solutions" className="py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-[#000515]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
         >
           <Badge
             variant="secondary"
@@ -113,16 +113,16 @@ export function SolutionsSection() {
           {/* Navigation Buttons */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-12 sm:h-12 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
           >
-            <ChevronLeft className="w-6 h-6 text-slate-600 dark:text-slate-400" />
+            <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-slate-600 dark:text-slate-400" />
           </button>
           
           <button
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 w-8 h-8 sm:w-12 sm:h-12 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
           >
-            <ChevronRight className="w-6 h-6 text-slate-600 dark:text-slate-400" />
+            <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-slate-600 dark:text-slate-400" />
           </button>
 
           {/* Carousel Container */}
@@ -135,25 +135,25 @@ export function SolutionsSection() {
               {extendedFeatures.map((feature, index) => (
                 <div
                   key={index}
-                  className="w-1/3 flex-shrink-0 px-4"
+                  className="w-1/3 flex-shrink-0 px-2 sm:px-4"
                 >
                   <div className="text-center">
                     {/* Icon */}
-                    <div className="w-16 h-16 mx-auto mb-6 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center">
-                      <feature.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    <div className="w-12 h-12 sm:w-16 sm:h-16 mx-auto mb-4 sm:mb-6 bg-slate-100 dark:bg-slate-800 rounded-xl sm:rounded-2xl flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400" />
                     </div>
                     
                     {/* Content */}
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+                    <h3 className="text-sm sm:text-lg font-semibold text-slate-900 dark:text-white mb-3 sm:mb-4">
                       {feature.title}
                     </h3>
                     
-                    <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mb-3 sm:mb-4 leading-relaxed">
                       {feature.description}
                     </p>
                     
                     {/* Metric Tag */}
-                    <div className="inline-block bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800">
+                    <div className="inline-block bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium border border-blue-200 dark:border-blue-800">
                       {feature.metric}
                     </div>
                   </div>
@@ -163,12 +163,12 @@ export function SolutionsSection() {
           </div>
 
           {/* Dots Indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
+          <div className="flex justify-center mt-6 sm:mt-8 space-x-1 sm:space-x-2">
             {features.map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
                     ? "bg-slate-900 dark:bg-white scale-125"
                     : "bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
@@ -178,9 +178,9 @@ export function SolutionsSection() {
           </div>
 
           {/* Auto-play indicator */}
-          <div className="text-center mt-4">
-            <div className="inline-flex items-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
-              <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-slate-900 dark:bg-white' : 'bg-slate-400'}`} />
+          <div className="text-center mt-3 sm:mt-4">
+            <div className="inline-flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+              <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full ${isAutoPlaying ? 'bg-slate-900 dark:bg-white' : 'bg-slate-400'}`} />
               <span>{isAutoPlaying ? 'Auto-playing' : 'Paused'}</span>
             </div>
           </div>

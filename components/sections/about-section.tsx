@@ -19,7 +19,7 @@ export function AboutSection() {
   }));
 
   return (
-    <section id="about" className="py-24 px-6 bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-[#000515] relative overflow-hidden">
       {/* Dynamic Gradient Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-br from-purple-600/10 to-indigo-800/10"
@@ -64,7 +64,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <Badge
             variant="secondary"
@@ -74,11 +74,12 @@ export function AboutSection() {
             About Hari Tech
           </Badge>
           <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white mb-6">
-            Building Tomorrow's<br />Technology Today
+            Innovating the Future<br />of Technology
           </h2>
           <p className="text-sm sm:text-base lg:text-lg text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            We are a team of senior software engineers, solution architects, and technology consultants with deep
-            expertise in building enterprise-grade systems that scale.
+            We are a team of visionary engineers and technology experts who push the boundaries of what's possible. 
+            Our deep expertise in AI, cloud computing, and enterprise systems enables us to create solutions that 
+            redefine industry standards.
           </p>
         </motion.div>
 

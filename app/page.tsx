@@ -19,7 +19,6 @@ import CalendlyEmbed from "@/components/sections/CalendlyWidget"
 import Stat from "@/components/sections/stat"
 
 export default function HariTechWebsite() {
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
@@ -36,7 +35,7 @@ export default function HariTechWebsite() {
   }
 
   return (
-    <div className={`min-h-screen transition-colors  duration-300 ${isDarkMode ? "dark bg-slate-900" : "bg-white"}`}>
+    <div className="min-h-screen bg-white dark:bg-[#000515] transition-colors duration-300">
       <LoadingScreen isLoading={isLoading} />
 
       {!isLoading && (
@@ -48,6 +47,7 @@ export default function HariTechWebsite() {
           <ScrollToTop />
 
           {/* <Navigation isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} scrollToSection={scrollToSection} /> */}
+          <div className="space-y-0">
             <HeroSection scrollToSection={scrollToSection} />
             <Stat/>
             <AboutSection />
@@ -57,7 +57,8 @@ export default function HariTechWebsite() {
             <ContactSection scrollToSection={scrollToSection} />
             <CalendlyEmbed />
             {/* <FooterSection  /> */}
-           <FloatingDock items={links} desktopClassName="fixed left-6 top-1/3 z-500  backdrop-3xl " />
+          </div>
+          <FloatingDock items={links} desktopClassName="fixed left-6 top-1/3 z-500  backdrop-3xl " />
         </>
       )}
     </div>

@@ -14,7 +14,7 @@ const CosmicPortal: React.FC = () => {
   return (
     <div className="fixed bottom-10 left-10 z-50">
       <motion.div
-        className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_20px_rgba(147,51,234,0.5)]"
+        className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 dark:from-blue-600 dark:to-purple-600 rounded-full flex items-center justify-center cursor-pointer shadow-[0_0_20px_rgba(147,51,234,0.5)] dark:shadow-[0_0_20px_rgba(59,130,246,0.5)]"
         animate={{ rotate: 360, scale: [1, 1.05, 1] }}
         transition={{ duration: 10, repeat: Infinity }}
         onClick={() => setIsOpen(!isOpen)}
@@ -27,7 +27,7 @@ const CosmicPortal: React.FC = () => {
             <motion.a
               key={index}
               href={planet.link}
-              className="absolute w-14 h-14 bg-white/10 backdrop-blur-lg rounded-full flex items-center justify-center text-white shadow-lg"
+              className="absolute w-14 h-14 bg-white/10 dark:bg-white/20 backdrop-blur-lg rounded-full flex items-center justify-center text-white shadow-lg dark:shadow-xl"
               initial={{ opacity: 0, scale: 0 }}
               animate={{
                 opacity: 1,
@@ -36,7 +36,7 @@ const CosmicPortal: React.FC = () => {
                 y: Math.sin((index * 2 * Math.PI) / planets.length) * 100,
               }}
               transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.2, boxShadow: '0 0 15px rgba(59,130,246,0.8)' }}
+              whileHover={{ scale: 1.2, boxShadow: '0 0 20px rgba(59,130,246,0.9)' }}
             >
               {planet.icon}
               <span className="absolute hidden group-hover:block text-sm bg-black/80 px-2 py-1 rounded top-[-30px]">

@@ -188,14 +188,14 @@ export function ServicesSection() {
   }));
 
   return (
-    <section id="services" className="py-24 px-6 bg-gradient-to-br from-slate-50 via-blue-50/20 to-purple-50/20 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+    <section id="services" className="py-16 sm:py-24 px-4 sm:px-6 bg-gradient-to-br from-slate-50 via-blue-50/20 to-purple-50/20 dark:from-[#000515] dark:via-[#000515]/95 dark:to-[#000515]/90">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
@@ -208,7 +208,7 @@ export function ServicesSection() {
               className="mb-6 px-6 py-3 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700 font-semibold"
             >
               <Sparkles className="w-4 h-4 mr-2" />
-              Our Services
+              Revolutionary Services
             </Badge>
           </motion.div>
           
@@ -219,7 +219,7 @@ export function ServicesSection() {
             transition={{ delay: 0.3 }}
             className="text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white mb-6"
           >
-            Enterprise Software<br />Solutions
+            Next-Generation<br />Solutions
           </motion.h2>
           
           <motion.p
@@ -229,8 +229,8 @@ export function ServicesSection() {
             transition={{ delay: 0.4 }}
             className="text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed"
           >
-            Comprehensive software development services designed to meet the complex needs of modern enterprises and
-            high-growth companies. We transform ideas into powerful digital solutions.
+            We leverage the latest technologies and innovative approaches to create solutions that not only meet your needs 
+            but exceed your expectations, driving unprecedented business growth and competitive advantage.
           </motion.p>
         </motion.div>
 

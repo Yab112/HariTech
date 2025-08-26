@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ThumbsUp, Bookmark, Share2 } from "lucide-react"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 
 export function FloatingActions() {
   const [likes, setLikes] = useState(89)
@@ -38,6 +39,21 @@ text: "Check out Hari Tech for amazing software solutions!",
 
   return (
     <div className="fixed right-6 bottom-24 z-40 flex flex-col space-y-3">
+      {/* Theme Toggle - Top */}
+      <motion.div
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onMouseEnter={() => setShowTooltip("theme")}
+        onMouseLeave={() => setShowTooltip("")}
+        className="relative elative w-12 h-12 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center"
+      >
+        <ThemeToggle />
+        {showTooltip === "theme" && (
+          <div className="absolute right-14 bg-black text-white text-xs px-2 py-1 rounded whitespace-nowrap ">
+            Toggle Theme
+          </div>
+        )}
+      </motion.div>
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
