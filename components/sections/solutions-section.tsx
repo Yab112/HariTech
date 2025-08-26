@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
-import { Zap, Shield, Users, Award, Clock, Globe, Sparkles } from "lucide-react"
+import { Zap, Shield, Users, Award, Clock, Globe, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react"
 
 const features = [
   {
@@ -43,7 +44,45 @@ const features = [
   },
 ]
 
+// Duplicate features to ensure we always have 3 slides visible
+const extendedFeatures = [...features, ...features, ...features]
+
 export function SolutionsSection() {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+
+  // Auto-advance functionality
+  useEffect(() => {
+    if (!isAutoPlaying) return
+
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % features.length)
+    }, 4000) // Change every 4 seconds
+
+    return () => clearInterval(interval)
+  }, [isAutoPlaying])
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1) % features.length)
+    setIsAutoPlaying(false)
+    // Resume auto-play after 10 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 + features.length) % features.length)
+    setIsAutoPlaying(false)
+    // Resume auto-play after 10 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index % features.length) // Keep within original features range
+    setIsAutoPlaying(false)
+    // Resume auto-play after 10 seconds of inactivity
+    setTimeout(() => setIsAutoPlaying(true), 10000)
+  }
+
   return (
     <section id="solutions" className="py-24 px-6 bg-white dark:bg-slate-900">
       <div className="max-w-7xl mx-auto">
@@ -69,65 +108,83 @@ export function SolutionsSection() {
           </p>
         </motion.div>
 
-        {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
-          {features.map((feature, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="text-center"
-            >
-              {/* Icon */}
-              <div className="w-16 h-16 mx-auto mb-6 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center">
-                <feature.icon className="w-8 h-8 text-slate-600 dark:text-slate-400" />
-              </div>
-              
-              {/* Content */}
-              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-4">
-                {feature.title}
-              </h3>
-              <p className="text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
-                {feature.description}
-              </p>
-              
-              {/* Metric */}
-              <div className="text-sm font-medium text-slate-500 dark:text-slate-400">
-                {feature.metric}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+        {/* Three-Slide Carousel */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+          >
+            <ChevronLeft className="w-6 h-6 text-slate-600 dark:text-slate-400" />
+          </button>
+          
+          <button
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+          >
+            <ChevronRight className="w-6 h-6 text-slate-600 dark:text-slate-400" />
+          </button>
 
-        {/* Simple Stats */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="mt-20 text-center"
-        >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">50+</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">Projects Delivered</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">99.9%</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">Uptime Guarantee</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">15+</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">Expert Engineers</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold text-slate-900 dark:text-white mb-2">25+</div>
-              <div className="text-sm text-slate-600 dark:text-slate-400">Countries Served</div>
+          {/* Carousel Container */}
+          <div className="overflow-hidden">
+            <motion.div
+              className="flex"
+              animate={{ x: `-${currentIndex * 33.333}%` }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+            >
+              {extendedFeatures.map((feature, index) => (
+                <div
+                  key={index}
+                  className="w-1/3 flex-shrink-0 px-4"
+                >
+                  <div className="text-center">
+                    {/* Icon */}
+                    <div className="w-16 h-16 mx-auto mb-6 bg-slate-100 dark:bg-slate-800 rounded-2xl flex items-center justify-center">
+                      <feature.icon className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+                    </div>
+                    
+                    {/* Content */}
+                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-4">
+                      {feature.title}
+                    </h3>
+                    
+                    <p className="text-sm text-slate-600 dark:text-slate-300 mb-4 leading-relaxed">
+                      {feature.description}
+                    </p>
+                    
+                    {/* Metric Tag */}
+                    <div className="inline-block bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 px-3 py-1 rounded-full text-sm font-medium border border-blue-200 dark:border-blue-800">
+                      {feature.metric}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </motion.div>
+          </div>
+
+          {/* Dots Indicator */}
+          <div className="flex justify-center mt-8 space-x-2">
+            {features.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => goToSlide(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentIndex
+                    ? "bg-slate-900 dark:bg-white scale-125"
+                    : "bg-slate-300 dark:bg-slate-600 hover:bg-slate-400 dark:hover:bg-slate-500"
+                }`}
+              />
+            ))}
+          </div>
+
+          {/* Auto-play indicator */}
+          <div className="text-center mt-4">
+            <div className="inline-flex items-center space-x-2 text-sm text-slate-500 dark:text-slate-400">
+              <div className={`w-2 h-2 rounded-full ${isAutoPlaying ? 'bg-slate-900 dark:bg-white' : 'bg-slate-400'}`} />
+              <span>{isAutoPlaying ? 'Auto-playing' : 'Paused'}</span>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

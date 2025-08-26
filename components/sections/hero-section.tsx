@@ -52,7 +52,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
   }))
 
   return (
-    <section id="home" className="relative pt-32 pb-20 overflow-hidden min-h-screen">
+    <section id="home" className="relative pt-8 pb-20 overflow-hidden min-h-screen">
       {/* Base Gradient Background with Color Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/10 to-indigo-50/15 dark:from-slate-900 dark:via-blue-950/10 dark:to-indigo-950/15" />
 
@@ -250,12 +250,12 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.8 }}
-          className="flex flex-col items-center justify-center mb-2"
+          className="flex flex-col items-center justify-center mb-4"
         >
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="flex items-center space-x-3 mb-1"
+            className="flex items-center space-x-3 mb-2"
           >
             <img
               src="/logo.jpg"
@@ -269,7 +269,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           </motion.div>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center h-[calc(100vh-100px)]">
+        <div className="grid lg:grid-cols-2 gap-8 items-center h-[calc(100vh-120px)]">
                     {/* Left Side - Professional Tech Visual */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
