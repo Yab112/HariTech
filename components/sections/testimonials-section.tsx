@@ -75,7 +75,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-12 sm:py-24 pb-2 sm:pb-24 px-2 sm:px-6 bg-slate-50 dark:bg-[#000515]">
+    <section className="py-12 sm:py-8 pb-2 sm:pb-24 px-2 sm:px-6 bg-slate-50 dark:bg-[#000515]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div

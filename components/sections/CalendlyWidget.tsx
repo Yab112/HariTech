@@ -51,8 +51,8 @@ const CalendlyEmbed = () => {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the booking data to your backend
-    console.log("Booking submitted:", { selectedDate, selectedTime, formData });
+    // Redirect to Calendly after form submission
+    window.open('https://calendly.com/edentech4/30min', '_blank');
     setStep(4);
   };
 
@@ -71,7 +71,7 @@ const CalendlyEmbed = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-[#000515] dark:via-slate-900 dark:to-blue-950/20" id="book-me">
+    <section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-900" id="book-me">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div 
@@ -80,19 +80,28 @@ const CalendlyEmbed = () => {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <div className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
+          <div className="inline-flex items-center px-4 py-2 bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-900 text-sm font-semibold rounded-full mb-6 shadow-lg">
             <FaCalendar className="w-4 h-4 mr-2" />
             Free 30-Min Discovery Call
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
             Let's Build Something
-            <span className="block  bg-clip-text text-blue-900 mb-8  ">
+            <span className="block text-slate-800 dark:text-white mb-8">
               Amazing Together    
             </span>
           </h2>
-          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-            Schedule a free consultation with our expert team. No pressure, no obligations - just a friendly chat about your project.
-          </p>
+                     <p className="text-sm  text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6">
+             Schedule a free consultation with our expert team. No pressure, no obligations - just a professional chat about your project.
+           </p>
+           <motion.button
+             whileHover={{ scale: 1.05 }}
+             whileTap={{ scale: 0.95 }}
+             onClick={() => window.open('https://calendly.com/edentech4/30min', '_blank')}
+             className="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-300"
+           >
+             <FaCalendar className="w-4 h-4 mr-2" />
+             Book Directly on Calendly
+           </motion.button>
         </motion.div>
 
         {/* Main Booking Card */}
@@ -103,49 +112,48 @@ const CalendlyEmbed = () => {
           transition={{ delay: 0.2 }}
           className="relative"
         >
-          {/* Background Glow */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+          {/* Background Border */}
+          <div className="absolute -inset-1 bg-slate-200 dark:bg-slate-700 rounded-3xl"></div>
           
           <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 dark:border-slate-700/50 overflow-hidden">
-            {/* Header */}
-            <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 p-4 sm:p-6 md:p-8 text-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-black/10"></div>
-              <div className="relative flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-                <div className="flex items-center space-x-3 sm:space-x-4">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/30">
-                    <FaCalendar className="w-6 h-6 sm:w-8 sm:h-8" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold">Hari Tech</h3>
-                    <p className="text-blue-100 text-sm sm:text-lg">30 min discovery call</p>
-                  </div>
-                </div>
-                <div className="text-center sm:text-right">
-                  <div className="text-2xl sm:text-3xl font-bold">Free</div>
-                  <div className="text-blue-100 text-sm sm:text-base">No cost</div>
-                </div>
-              </div>
-            </div>
+                         {/* Header */}
+             <div className="bg-slate-800 dark:bg-slate-700 p-4 sm:p-6 md:p-8 text-white relative overflow-hidden">
+               <div className="relative flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+                 <div className="flex items-center space-x-3 sm:space-x-4">
+                                       <div className="w-12 h-12 sm:w-16 sm:h-16 bg-blue-500 rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/20">
+                      <FaCalendar className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                    </div>
+                   <div>
+                     <h3 className="text-lg sm:text-xl md:text-2xl font-bold">Hari Tech</h3>
+                     <p className="text-slate-200 text-sm sm:text-lg">30 min discovery call</p>
+                   </div>
+                 </div>
+                 <div className="text-center sm:text-right">
+                   <div className="text-2xl sm:text-3xl font-bold">Free</div>
+                   <div className="text-slate-200 text-sm sm:text-base">No cost</div>
+                 </div>
+               </div>
+             </div>
 
             {/* Progress Steps */}
             <div className="p-4 sm:p-6 border-b border-slate-200 dark:border-slate-700">
               <div className="flex items-center justify-center space-x-2 sm:space-x-4">
                 {[1, 2, 3, 4].map((stepNum) => (
                   <div key={stepNum} className="flex items-center">
-                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                      step >= stepNum 
-                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-110' 
-                        : 'bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
-                    }`}>
-                      {step >= stepNum ? <FaCheck className="w-3 h-3 sm:w-4 sm:h-4" /> : stepNum}
+                                         <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                       step >= stepNum 
+                         ? 'bg-slate-800 dark:bg-slate-600 text-white scale-110' 
+                         : 'bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                     }`}>
+                                             {step >= stepNum ? <FaCheck className="w-3 h-3 sm:w-4 sm:h-4 text-white" /> : stepNum}
                     </div>
-                    {stepNum < 4 && (
-                      <div className={`w-8 sm:w-12 h-1 mx-2 sm:mx-3 rounded-full transition-all duration-300 ${
-                        step > stepNum 
-                          ? 'bg-gradient-to-r from-blue-600 to-purple-600' 
-                          : 'bg-slate-200 dark:bg-slate-700'
-                      }`} />
-                    )}
+                                         {stepNum < 4 && (
+                       <div className={`w-8 sm:w-12 h-1 mx-2 sm:mx-3 rounded-full transition-all duration-300 ${
+                         step > stepNum 
+                           ? 'bg-slate-800 dark:bg-slate-600' 
+                           : 'bg-slate-200 dark:bg-slate-700'
+                       }`} />
+                     )}
                   </div>
                 ))}
               </div>
@@ -171,7 +179,7 @@ const CalendlyEmbed = () => {
                           whileHover={{ scale: 1.05 }}
                           whileTap={{ scale: 0.95 }}
                           onClick={() => handleDateSelect(day.date)}
-                          className="group p-2 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transition-all duration-300 bg-white dark:bg-slate-800"
+                                                     className="group p-2 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-300 bg-white dark:bg-slate-800"
                         >
                                                      <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">{day.day}</div>
                            <div className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-1">{day.dayNum}</div>
@@ -196,14 +204,14 @@ const CalendlyEmbed = () => {
                          whileHover={{ scale: 1.05 }}
                          whileTap={{ scale: 0.95 }}
                          onClick={() => setStep(1)}
-                         className="flex items-center space-x-1 sm:space-x-2 text-blue-600 hover:text-blue-700 font-semibold text-sm sm:text-base"
+                         className="flex items-center space-x-1 sm:space-x-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-semibold text-sm sm:text-base"
                        >
                          <span>←</span>
                          <span>Back</span>
                        </motion.button>
                        <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Select a Time</h4>
                      </div>
-                                         <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-3 sm:p-4 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+                                                                                   <div className="bg-slate-50 dark:bg-slate-800 p-3 sm:p-4 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
                        <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-semibold">
                         {new Date(selectedDate).toLocaleDateString('en-US', { 
                           weekday: 'long', 
@@ -220,7 +228,7 @@ const CalendlyEmbed = () => {
                            whileHover={{ scale: 1.05 }}
                            whileTap={{ scale: 0.95 }}
                            onClick={() => handleTimeSelect(time)}
-                           className="p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transition-all duration-300 text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                                                       className="p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-300 text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
                          >
                            {time}
                          </motion.button>
@@ -238,21 +246,21 @@ const CalendlyEmbed = () => {
                     transition={{ duration: 0.3 }}
                   >
                                          <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">
-                       <motion.button
-                         whileHover={{ scale: 1.05 }}
-                         whileTap={{ scale: 0.95 }}
-                         onClick={() => setStep(2)}
-                         className="flex items-center space-x-1 sm:space-x-2 text-blue-600 hover:text-blue-700 font-semibold text-sm sm:text-base"
-                       >
-                         <span>←</span>
-                         <span>Back</span>
-                       </motion.button>
+                                               <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => setStep(2)}
+                          className="flex items-center space-x-1 sm:space-x-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-semibold text-sm sm:text-base"
+                        >
+                          <span>←</span>
+                          <span>Back</span>
+                        </motion.button>
                        <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Enter Details</h4>
                      </div>
                     
-                                         <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+                                         <div className="bg-slate-50 dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
                        <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300 mb-2 sm:mb-3">
-                         <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                         <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
                          <span className="font-semibold text-sm sm:text-base">
                            {new Date(selectedDate).toLocaleDateString('en-US', { 
                              weekday: 'long', 
@@ -263,7 +271,7 @@ const CalendlyEmbed = () => {
           </span>
                        </div>
                        <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300">
-                         <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                         <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
                          <span className="font-semibold text-sm sm:text-base">{selectedTime}</span>
                        </div>
                      </div>
@@ -272,15 +280,15 @@ const CalendlyEmbed = () => {
                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                         <div>
                                                    <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Full Name *</label>
-                         <input
-                           type="text"
-                           name="name"
-                           value={formData.name}
-                           onChange={handleInputChange}
-                           required
-                           className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
-                           placeholder="Your full name"
-                         />
+                                                    <input
+                             type="text"
+                             name="name"
+                             value={formData.name}
+                             onChange={handleInputChange}
+                             required
+                             className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-slate-500 focus:border-slate-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                             placeholder="Your full name"
+                           />
                         </div>
                         <div>
                           <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email *</label>
@@ -290,7 +298,7 @@ const CalendlyEmbed = () => {
                             value={formData.email}
                             onChange={handleInputChange}
                             required
-                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-slate-500 focus:border-slate-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
                             placeholder="your@email.com"
                           />
                         </div>
@@ -304,7 +312,7 @@ const CalendlyEmbed = () => {
                             name="company"
                             value={formData.company}
                             onChange={handleInputChange}
-                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-slate-500 focus:border-slate-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
                             placeholder="Your company"
                           />
                         </div>
@@ -315,7 +323,7 @@ const CalendlyEmbed = () => {
                             name="phone"
                             value={formData.phone}
                             onChange={handleInputChange}
-                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-slate-500 focus:border-slate-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
                             placeholder="+1 (555) 123-4567"
                           />
                         </div>
@@ -323,24 +331,24 @@ const CalendlyEmbed = () => {
 
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Project Details</label>
-                        <textarea
-                          name="message"
-                          value={formData.message}
-                          onChange={handleInputChange}
-                          rows={4}
-                          className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300 resize-none"
-                          placeholder="Tell us about your project, goals, and timeline..."
-                        />
+                                                 <textarea
+                           name="message"
+                           value={formData.message}
+                           onChange={handleInputChange}
+                           rows={4}
+                           className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-slate-500 focus:border-slate-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300 resize-none"
+                           placeholder="Tell us about your project, goals, and timeline..."
+                         />
         </div>
 
-                      <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        type="submit"
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-                      >
-                        Schedule Meeting
-                      </motion.button>
+                                             <motion.button
+                         whileHover={{ scale: 1.02 }}
+                         whileTap={{ scale: 0.98 }}
+                         type="submit"
+                         className="w-full bg-slate-800 dark:bg-slate-700 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:bg-slate-700 dark:hover:bg-slate-600 transition-all duration-300"
+                       >
+                         Schedule Meeting
+                       </motion.button>
                     </form>
                   </motion.div>
                 )}
@@ -354,23 +362,23 @@ const CalendlyEmbed = () => {
                     transition={{ duration: 0.3 }}
                     className="text-center"
                   >
-                    <motion.div 
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                                             className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6"
-                    >
-                      <FaCheck className="w-10 h-10 text-white" />
-                    </motion.div>
+                                         <motion.div 
+                       initial={{ scale: 0 }}
+                       animate={{ scale: 1 }}
+                       transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                       className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6"
+                     >
+                       <FaCheck className="w-10 h-10 text-white" />
+                     </motion.div>
                     
                     <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Meeting Scheduled!</h4>
-                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-md mx-auto">
-                      We've sent a confirmation email to <span className="font-semibold text-blue-600">{formData.email}</span> with meeting details and calendar invite.
-                    </p>
+                                         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-md mx-auto">
+                       We've sent a confirmation email to <span className="font-semibold text-slate-800 dark:text-slate-200">{formData.email}</span> with meeting details and calendar invite.
+                     </p>
                     
-                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 max-w-md mx-auto">
+                                         <div className="bg-slate-50 dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 max-w-md mx-auto">
                       <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300 mb-2 sm:mb-3">
-                        <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                                                 <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
                         <span className="font-semibold text-sm sm:text-base">
                           {new Date(selectedDate).toLocaleDateString('en-US', { 
                             weekday: 'long', 
@@ -381,19 +389,19 @@ const CalendlyEmbed = () => {
                         </span>
                       </div>
                       <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300">
-                        <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                                                 <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
                         <span className="font-semibold text-sm sm:text-base">{selectedTime}</span>
                       </div>
                     </div>
                     
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      onClick={resetBooking}
-                                             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-2xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
-                    >
-                      Schedule Another Meeting
-                    </motion.button>
+                                         <motion.button
+                       whileHover={{ scale: 1.05 }}
+                       whileTap={{ scale: 0.95 }}
+                       onClick={resetBooking}
+                       className="bg-slate-800 dark:bg-slate-700 text-white px-8 py-3 rounded-2xl font-bold hover:bg-slate-700 dark:hover:bg-slate-600 transition-all duration-300"
+                     >
+                       Schedule Another Meeting
+                     </motion.button>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -402,15 +410,15 @@ const CalendlyEmbed = () => {
         </motion.div>
 
         {/* Bottom Text */}
-        <motion.p 
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-          className="text-center text-slate-500 dark:text-slate-400 mt-8 text-base sm:text-lg"
-        >
-          No pressure. No obligations. Just a friendly chat about your project. 🌟
-        </motion.p>
+                 <motion.p 
+           initial={{ opacity: 0 }}
+           whileInView={{ opacity: 1 }}
+           viewport={{ once: true }}
+           transition={{ delay: 0.4 }}
+           className="text-center text-slate-500 dark:text-slate-400 mt-8 text-base sm:text-lg"
+         >
+           No pressure. No obligations. Just a professional consultation about your project.
+         </motion.p>
       </div>
     </section>
   );
