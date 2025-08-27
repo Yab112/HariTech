@@ -15,8 +15,8 @@ export function ServicesSection() {
     value: service.title.toLowerCase().replace(/\s+/g, "-"),
     content: (
               <WobbleCard
-          containerClassName="h-full min-h-[500px] md:min-h-[600px] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
-          className="p-4 sm:p-6 md:p-8 lg:p-10"
+          containerClassName="h-full min-h-[400px] md:min-h-[450px] bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden"
+          className="p-3 sm:p-4 md:p-6"
         >
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0">
@@ -44,7 +44,7 @@ export function ServicesSection() {
 
           {/* Large Foreground Image - Bottom Right Corner */}
           <motion.div
-            className="absolute bottom-0 right-0 z-10 w-80 h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[400px] rounded-2xl overflow-hidden shadow-2xl"
+            className="absolute bottom-0 right-0 z-10 w-60 h-60 md:w-72 md:h-72 lg:w-[350px] lg:h-[280px] rounded-2xl overflow-hidden"
             initial={{ opacity: 0, x: 50, y: 50, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -72,14 +72,14 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center justify-between mb-6"
+            className="flex items-center justify-between mb-4"
           >
             <motion.div
               whileHover={{ rotate: 360, scale: 1.2 }}
               transition={{ duration: 0.5 }}
-              className="w-14 h-14 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg"
+              className="w-12 h-12 bg-gradient-to-br from-purple-500 to-blue-600 rounded-xl flex items-center justify-center"
             >
-              <service.icon className="w-7 h-7 text-white" />
+              <service.icon className="w-6 h-6 text-white" />
             </motion.div>
             <Badge 
               variant="secondary" 
@@ -95,7 +95,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight"
+            className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight"
           >
             {service.title}
           </motion.h3>
@@ -105,7 +105,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-sm sm:text-base text-slate-300 mb-4 sm:mb-6 leading-relaxed"
+            className="text-xs sm:text-sm text-slate-300 mb-3 sm:mb-4 leading-relaxed"
           >
             {service.description}
           </motion.p>
@@ -115,7 +115,7 @@ export function ServicesSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="space-y-2 sm:space-y-3 mb-6 sm:mb-8"
+            className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6"
           >
             {service.features.map((feature, idx) => (
               <motion.div
@@ -125,10 +125,10 @@ export function ServicesSection() {
                 transition={{ duration: 0.5, delay: 0.6 + idx * 0.1 }}
                 className="flex items-center text-slate-200 group"
               >
-                <div className="w-5 h-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform">
-                  <CheckCircle className="w-3 h-3 text-white" />
+                <div className="w-4 h-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mr-2 group-hover:scale-110 transition-transform">
+                  <CheckCircle className="w-2.5 h-2.5 text-white" />
                 </div>
-                <span className="text-xs sm:text-sm font-medium group-hover:text-white transition-colors">
+                <span className="text-xs font-medium group-hover:text-white transition-colors">
                   {feature}
                 </span>
               </motion.div>
@@ -214,7 +214,7 @@ export function ServicesSection() {
         </motion.div>
 
         {/* Services Tabs */}
-        <div className="h-[40rem] md:h-[50rem] [perspective:1000px] relative flex flex-col max-w-6xl mx-auto w-full items-center justify-start">
+        <div className="h-[32rem] md:h-[40rem] [perspective:1000px] relative flex flex-col max-w-6xl mx-auto w-full items-center justify-start">
           <Tabs
             tabs={tabs}
             containerClassName="mb-4 flex justify-center"

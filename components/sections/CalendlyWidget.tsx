@@ -1,8 +1,8 @@
 "use client";
 
-import { FaShopify, FaSpotify, FaStripe, FaEnvelope, FaPhone, FaCalendar, FaClock, FaUser, FaMapMarkerAlt } from "react-icons/fa";
+import { FaShopify, FaSpotify, FaStripe, FaEnvelope, FaPhone, FaCalendar, FaClock, FaUser, FaMapMarkerAlt, FaCheck } from "react-icons/fa";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CalendlyEmbed = () => {
   const [selectedDate, setSelectedDate] = useState<string>("");
@@ -71,249 +71,346 @@ const CalendlyEmbed = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-slate-50 to-white dark:from-[#000515] dark:to-slate-900" id="book-me">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="text-center mb-8 sm:mb-12">
-          <span className="inline-block px-6 py-3 text-sm font-semibold bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border border-purple-200 dark:border-purple-700 rounded-full">
-            🚀 Free 30-Min Discovery Call
-          </span>
-        </div>
-
-        <div className="rounded-2xl border border-gray-200 dark:border-slate-700 overflow-hidden transition-all duration-300 bg-white dark:bg-slate-800">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-blue-600 to-blue-700 p-6 text-white">
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <FaCalendar className="w-6 h-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold">Hari Tech</h3>
-                <p className="text-blue-100">30 min meeting</p>
-              </div>
-            </div>
+    <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50/30 dark:from-[#000515] dark:via-slate-900 dark:to-blue-950/20" id="book-me">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        {/* Header */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center px-4 py-2 bg-blue-500 text-white text-sm font-semibold rounded-full mb-6 shadow-lg">
+            <FaCalendar className="w-4 h-4 mr-2" />
+            Free 30-Min Discovery Call
           </div>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+            Let's Build Something
+            <span className="block  bg-clip-text text-blue-900 mb-8  ">
+              Amazing Together    
+            </span>
+          </h2>
+          <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+            Schedule a free consultation with our expert team. No pressure, no obligations - just a friendly chat about your project.
+          </p>
+        </motion.div>
 
-          {/* Progress Steps */}
-          <div className="flex items-center justify-center p-4 border-b border-gray-200 dark:border-slate-700">
-            <div className="flex items-center space-x-2">
-              {[1, 2, 3, 4].map((stepNum) => (
-                <div key={stepNum} className="flex items-center">
-                  <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
-                    step >= stepNum ? 'bg-blue-600 text-white' : 'bg-gray-200 dark:bg-slate-700 text-gray-500 dark:text-slate-400'
-                  }`}>
-                    {stepNum}
+        {/* Main Booking Card */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="relative"
+        >
+          {/* Background Glow */}
+          <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"></div>
+          
+          <div className="relative bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/20 dark:border-slate-700/50 overflow-hidden">
+            {/* Header */}
+            <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-purple-600 p-4 sm:p-6 md:p-8 text-white relative overflow-hidden">
+              <div className="absolute inset-0 bg-black/10"></div>
+              <div className="relative flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+                <div className="flex items-center space-x-3 sm:space-x-4">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center border border-white/30">
+                    <FaCalendar className="w-6 h-6 sm:w-8 sm:h-8" />
                   </div>
-                  {stepNum < 4 && (
-                    <div className={`w-8 h-0.5 mx-2 ${step > stepNum ? 'bg-blue-600' : 'bg-gray-200 dark:bg-slate-600'}`} />
-                  )}
+                  <div>
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold">Hari Tech</h3>
+                    <p className="text-blue-100 text-sm sm:text-lg">30 min discovery call</p>
+                  </div>
                 </div>
-              ))}
+                <div className="text-center sm:text-right">
+                  <div className="text-2xl sm:text-3xl font-bold">Free</div>
+                  <div className="text-blue-100 text-sm sm:text-base">No cost</div>
+                </div>
+              </div>
             </div>
+
+            {/* Progress Steps */}
+            <div className="p-4 sm:p-6 border-b border-slate-200 dark:border-slate-700">
+              <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+                {[1, 2, 3, 4].map((stepNum) => (
+                  <div key={stepNum} className="flex items-center">
+                    <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold transition-all duration-300 ${
+                      step >= stepNum 
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white scale-110' 
+                        : 'bg-slate-200 dark:bg-slate-700 text-slate-500 dark:text-slate-400'
+                    }`}>
+                      {step >= stepNum ? <FaCheck className="w-3 h-3 sm:w-4 sm:h-4" /> : stepNum}
+                    </div>
+                    {stepNum < 4 && (
+                      <div className={`w-8 sm:w-12 h-1 mx-2 sm:mx-3 rounded-full transition-all duration-300 ${
+                        step > stepNum 
+                          ? 'bg-gradient-to-r from-blue-600 to-purple-600' 
+                          : 'bg-slate-200 dark:bg-slate-700'
+                      }`} />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Step Content */}
+            <div className="p-4 sm:p-6 md:p-8">
+              <AnimatePresence mode="wait">
+                {step === 1 && (
+                  <motion.div
+                    key="step1"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-center"
+                  >
+                    <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-6 sm:mb-8">Select a Date</h4>
+                    <div className="grid grid-cols-7 gap-2 sm:gap-3">
+                      {getNextDays().map((day) => (
+                        <motion.button
+                          key={day.date}
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => handleDateSelect(day.date)}
+                          className="group p-2 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transition-all duration-300 bg-white dark:bg-slate-800"
+                        >
+                                                     <div className="text-xs text-slate-500 dark:text-slate-400 font-medium">{day.day}</div>
+                           <div className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white mt-1">{day.dayNum}</div>
+                           <div className="text-xs text-slate-500 dark:text-slate-400">{day.month}</div>
+                        </motion.button>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 2 && (
+                  <motion.div
+                    key="step2"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-center"
+                  >
+                                         <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">
+                       <motion.button
+                         whileHover={{ scale: 1.05 }}
+                         whileTap={{ scale: 0.95 }}
+                         onClick={() => setStep(1)}
+                         className="flex items-center space-x-1 sm:space-x-2 text-blue-600 hover:text-blue-700 font-semibold text-sm sm:text-base"
+                       >
+                         <span>←</span>
+                         <span>Back</span>
+                       </motion.button>
+                       <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Select a Time</h4>
+                     </div>
+                                         <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-3 sm:p-4 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+                       <p className="text-base sm:text-lg text-slate-700 dark:text-slate-300 font-semibold">
+                        {new Date(selectedDate).toLocaleDateString('en-US', { 
+                          weekday: 'long', 
+                          year: 'numeric', 
+                          month: 'long', 
+                          day: 'numeric' 
+                        })}
+                      </p>
+                    </div>
+                                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3 max-h-64 sm:max-h-80 overflow-y-auto scrollbar-hide">
+                       {timeSlots.map((time) => (
+                         <motion.button
+                           key={time}
+                           whileHover={{ scale: 1.05 }}
+                           whileTap={{ scale: 0.95 }}
+                           onClick={() => handleTimeSelect(time)}
+                           className="p-3 sm:p-4 rounded-xl sm:rounded-2xl border-2 border-slate-200 dark:border-slate-700 hover:border-blue-500 hover:bg-gradient-to-br hover:from-blue-50 hover:to-purple-50 dark:hover:from-blue-900/20 dark:hover:to-purple-900/20 transition-all duration-300 text-xs sm:text-sm font-semibold bg-white dark:bg-slate-800 text-slate-900 dark:text-white"
+                         >
+                           {time}
+                         </motion.button>
+                       ))}
+                     </div>
+                  </motion.div>
+                )}
+
+                {step === 3 && (
+                  <motion.div
+                    key="step3"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                                         <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">
+                       <motion.button
+                         whileHover={{ scale: 1.05 }}
+                         whileTap={{ scale: 0.95 }}
+                         onClick={() => setStep(2)}
+                         className="flex items-center space-x-1 sm:space-x-2 text-blue-600 hover:text-blue-700 font-semibold text-sm sm:text-base"
+                       >
+                         <span>←</span>
+                         <span>Back</span>
+                       </motion.button>
+                       <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Enter Details</h4>
+                     </div>
+                    
+                                         <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8">
+                       <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300 mb-2 sm:mb-3">
+                         <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                         <span className="font-semibold text-sm sm:text-base">
+                           {new Date(selectedDate).toLocaleDateString('en-US', { 
+                             weekday: 'long', 
+                             year: 'numeric', 
+                             month: 'long', 
+                             day: 'numeric' 
+                           })}
+          </span>
+                       </div>
+                       <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300">
+                         <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                         <span className="font-semibold text-sm sm:text-base">{selectedTime}</span>
+                       </div>
+                     </div>
+
+                                         <form onSubmit={handleFormSubmit} className="space-y-4 sm:space-y-6">
+                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                                                   <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Full Name *</label>
+                         <input
+                           type="text"
+                           name="name"
+                           value={formData.name}
+                           onChange={handleInputChange}
+                           required
+                           className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                           placeholder="Your full name"
+                         />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Email *</label>
+                          <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleInputChange}
+                            required
+                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                            placeholder="your@email.com"
+                          />
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div>
+                          <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Company</label>
+                          <input
+                            type="text"
+                            name="company"
+                            value={formData.company}
+                            onChange={handleInputChange}
+                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                            placeholder="Your company"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Phone</label>
+                          <input
+                            type="tel"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleInputChange}
+                            className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300"
+                            placeholder="+1 (555) 123-4567"
+                          />
+                        </div>
         </div>
 
-          {/* Step Content */}
-          <div className="p-6">
-            {step === 1 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center"
-              >
-                <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Select a Date</h4>
-                <div className="grid grid-cols-7 gap-1 sm:gap-2">
-                  {getNextDays().map((day) => (
-                    <button
-                      key={day.date}
-                      onClick={() => handleDateSelect(day.date)}
-                      className="p-2 sm:p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors bg-white dark:bg-slate-700"
+                      <div>
+                        <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Project Details</label>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          rows={4}
+                          className="w-full p-3 sm:p-4 border-2 border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-800 text-slate-900 dark:text-white text-base sm:text-lg transition-all duration-300 resize-none"
+                          placeholder="Tell us about your project, goals, and timeline..."
+                        />
+        </div>
+
+                      <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        type="submit"
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+                      >
+                        Schedule Meeting
+                      </motion.button>
+                    </form>
+                  </motion.div>
+                )}
+
+                {step === 4 && (
+                  <motion.div
+                    key="step4"
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="text-center"
+                  >
+                    <motion.div 
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                                             className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6"
                     >
-                      <div className="text-xs text-gray-500 dark:text-slate-400">{day.day}</div>
-                      <div className="text-sm sm:text-lg font-semibold text-gray-900 dark:text-white">{day.dayNum}</div>
-                      <div className="text-xs text-gray-500 dark:text-slate-400">{day.month}</div>
-                    </button>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-
-            {step === 2 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center"
-              >
-                <div className="flex items-center justify-center space-x-2 mb-4">
-                  <button
-                    onClick={() => setStep(1)}
-                    className="text-blue-600 hover:text-blue-700"
-                  >
-                    ← Back
-                  </button>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Select a Time</h4>
-                </div>
-                <p className="text-sm text-gray-600 dark:text-slate-400 mb-6">
-                  {new Date(selectedDate).toLocaleDateString('en-US', { 
-                    weekday: 'long', 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                  })}
-                </p>
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 max-h-64 overflow-y-auto">
-                  {timeSlots.map((time) => (
-                    <button
-                      key={time}
-                      onClick={() => handleTimeSelect(time)}
-                      className="p-2 sm:p-3 rounded-lg border border-gray-200 dark:border-slate-600 hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors text-xs sm:text-sm bg-white dark:bg-slate-700 text-gray-900 dark:text-white"
+                      <FaCheck className="w-10 h-10 text-white" />
+                    </motion.div>
+                    
+                    <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Meeting Scheduled!</h4>
+                    <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-md mx-auto">
+                      We've sent a confirmation email to <span className="font-semibold text-blue-600">{formData.email}</span> with meeting details and calendar invite.
+                    </p>
+                    
+                    <div className="bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 max-w-md mx-auto">
+                      <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300 mb-2 sm:mb-3">
+                        <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                        <span className="font-semibold text-sm sm:text-base">
+                          {new Date(selectedDate).toLocaleDateString('en-US', { 
+                            weekday: 'long', 
+                            year: 'numeric', 
+                            month: 'long', 
+                            day: 'numeric' 
+                          })}
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300">
+                        <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-600" />
+                        <span className="font-semibold text-sm sm:text-base">{selectedTime}</span>
+                      </div>
+                    </div>
+                    
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={resetBooking}
+                                             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-2xl font-bold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
                     >
-                      {time}
-                    </button>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-
-            {step === 3 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-              >
-                <div className="flex items-center justify-center space-x-2 mb-4">
-                  <button
-                    onClick={() => setStep(2)}
-                    className="text-blue-600 hover:text-blue-700"
-                  >
-                    ← Back
-                  </button>
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Enter Details</h4>
-                </div>
-                <div className="bg-gray-50 dark:bg-slate-700 p-4 rounded-lg mb-6">
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400">
-                    <FaCalendar className="w-4 h-4" />
-                    <span>
-                      {new Date(selectedDate).toLocaleDateString('en-US', { 
-                        weekday: 'long', 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                      })}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400 mt-1">
-                    <FaClock className="w-4 h-4" />
-                    <span>{selectedTime}</span>
-                  </div>
-                </div>
-                <form onSubmit={handleFormSubmit} className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Email *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Company</label>
-                    <input
-                      type="text"
-                      name="company"
-                      value={formData.company}
-                      onChange={handleInputChange}
-                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Phone</label>
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-slate-300 mb-1">Message</label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      rows={3}
-                      className="w-full p-2 sm:p-3 border border-gray-300 dark:border-slate-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white dark:bg-slate-700 text-gray-900 dark:text-white text-sm"
-                      placeholder="Tell us about your project..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                  >
-                    Schedule Meeting
-                  </button>
-                </form>
-              </motion.div>
-            )}
-
-            {step === 4 && (
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-center"
-              >
-                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </div>
-                <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Meeting Scheduled!</h4>
-                <p className="text-gray-600 dark:text-slate-400 mb-6">
-                  We've sent a confirmation email to {formData.email} with meeting details.
-                </p>
-                <div className="bg-gray-50 dark:bg-slate-700 p-4 rounded-lg mb-6">
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400 mb-2">
-                    <FaCalendar className="w-4 h-4" />
-                    <span>
-                      {new Date(selectedDate).toLocaleDateString('en-US', { 
-                        weekday: 'long', 
-                        year: 'numeric', 
-                        month: 'long', 
-                        day: 'numeric' 
-                      })}
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-gray-600 dark:text-slate-400">
-                    <FaClock className="w-4 h-4" />
-                    <span>{selectedTime}</span>
-                  </div>
-                </div>
-                <button
-                  onClick={resetBooking}
-                  className="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
-                >
-                  Schedule Another Meeting
-                </button>
-              </motion.div>
-            )}
+                      Schedule Another Meeting
+                    </motion.button>
+                  </motion.div>
+                )}
+              </AnimatePresence>
         </div>
-        </div>
+          </div>
+        </motion.div>
 
-        <p className="text-center text-sm text-gray-400 dark:text-slate-500 mt-6">
-          No pressure. No obligations. Just a friendly chat. 🌟
-        </p>
+        {/* Bottom Text */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+          className="text-center text-slate-500 dark:text-slate-400 mt-8 text-base sm:text-lg"
+        >
+          No pressure. No obligations. Just a friendly chat about your project. 🌟
+        </motion.p>
       </div>
     </section>
   );

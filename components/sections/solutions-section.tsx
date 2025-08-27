@@ -96,8 +96,18 @@ export function SolutionsSection() {
   }
 
   return (
-    <section id="solutions" className="py-16 sm:py-24 px-2 sm:px-6 bg-white dark:bg-[#000515]">
-      <div className="max-w-7xl mx-auto w-full">
+    <section id="solutions" className="py-16 sm:py-24 px-2 sm:px-6 bg-white dark:bg-[#000515] relative overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none"
+        style={{
+          backgroundImage: 'url(/wave.jpg)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      />
+      <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

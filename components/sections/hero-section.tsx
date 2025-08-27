@@ -257,7 +257,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
-            className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 mb-2"
+            className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 sm:mb-2"
           >
             <img
               src="/logo.jpg"
@@ -267,9 +267,9 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             <div className="text-center sm:text-left">
               <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">Hari Tech</h1>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Software Development</p>
-            </div>
+              </div>
+            </motion.div>
           </motion.div>
-        </motion.div>
 
         <div className="flex flex-col justify-center items-center min-h-[calc(100vh-120px)] sm:min-h-[calc(100vh-140px)] lg:min-h-[calc(100vh-160px)]">
           {/* Main Content - Centered */}
@@ -298,7 +298,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               <span className="block text-slate-900 dark:text-white">
                 All IT-related services<br className="hidden sm:block" />
                 <span className="text-blue-600">good facilitate providers</span>
-              </span>
+                </span>
             </motion.h1>
 
             <motion.p
