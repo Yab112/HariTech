@@ -25,7 +25,7 @@ interface FormData {
 interface ContactInfo {
   icon: React.ComponentType<{ className?: string }>;
   title: string;
-  info: string;
+  info: string | string[];
   description: string;
   action: () => void;
 }
@@ -124,7 +124,7 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
     {
       icon: Phone,
       title: "Phone",
-      info: "+251944003334",
+      info: ["+251944003334", "+251911906245"],
       description: "Mon-Fri from 8am to 6pm",
       action: handlePhoneClick,
     },
@@ -138,22 +138,22 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
   ];
 
   return (
-         <section id="contact" className="pt-2 sm:pt-16 md:pt-24 pb-12 sm:pb-16 md:pb-24 px-4 sm:px-6 bg-white dark:bg-[#000515]">
+         <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#000515]">
               <div className="w-full mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12 md:mb-20"
+          className="text-center mb-8 sm:mb-12"
         >
           <Badge
             variant="secondary"
-            className="mb-6 px-6 py-3 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700 font-semibold"
+            className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
           >
             <Sparkles className="w-4 h-4 mr-2" />
             Get In Touch
           </Badge>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
             Let's Build Something<br className="hidden sm:block" />Great Together
           </h2>
           <p className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
@@ -162,7 +162,7 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
           </p>
         </motion.div>
 
-                                   <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12">
+              <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12">
            <motion.div
              initial={{ opacity: 0, x: -50 }}
              whileInView={{ opacity: 1, x: 0 }}

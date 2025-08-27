@@ -52,7 +52,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
   }))
 
   return (
-    <section id="home" className="relative pt-8 pb-20 overflow-hidden h-screen">
+         <section id="home" className="relative pt-4 sm:pt-8 pb-12 sm:pb-20 overflow-hidden h-screen">
       {/* Base Gradient Background with Color Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/10 to-indigo-50/15 dark:from-[#000515] dark:via-[#000515]/95 dark:to-[#000515]/90" />
 
@@ -250,26 +250,19 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
            initial={{ opacity: 0, y: -10 }}
            animate={{ opacity: 1, y: 0 }}
            transition={{ delay: 0.1, duration: 0.8 }}
-           className="flex flex-col items-center justify-center pt-8 sm:pt-12 md:pt-16"
+                       className="flex flex-col items-center justify-center pt-4 sm:pt-8 md:pt-12"
          >
            <motion.div
              whileHover={{ scale: 1.05 }}
              transition={{ duration: 0.3 }}
-             className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-3 sm:mb-1"
+             className="text-center"
            >
-             <img
-               src="/logo.jpg"
-               alt="Hari Tech Logo"
-               className="h-10 sm:h-14 md:h-16 w-auto rounded-lg"
-             />
-             <div className="text-center sm:text-left">
-               <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white">Hari Technology</h1>
-               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Software Development</p>
-               </div>
-             </motion.div>
+                           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white mb-3">Hari Technology</h1>
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-400">Software Development</p>
+           </motion.div>
            </motion.div>
 
-          <div className="h-2"></div>
+                     <div className="h-4 sm:h-6 md:h-8"></div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -278,20 +271,20 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             className="flex flex-col justify-center text-center max-w-4xl mx-auto"
           >
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
-              <Badge
-                variant="secondary"
-                className="mb-4 md:mb-6 px-3 md:px-4 py-1 md:py-2 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 backdrop-blur-md w-fit text-xs md:text-sm lg:text-base mx-auto"
-              >
-                <TrendingUp className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-1 md:mr-2" />
-                Leading Software Development Company
-              </Badge>
+                             <Badge
+                 variant="secondary"
+                 className="mb-6 sm:mb-8 px-4 sm:px-5 py-2 sm:py-3 bg-white/70 dark:bg-slate-800/70 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-800 backdrop-blur-md w-fit text-sm sm:text-base lg:text-lg mx-auto"
+               >
+                 <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 mr-2" />
+                 Leading Software Development Company
+               </Badge>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="text-xl sm:text-2xl md:text-4xl lg:text-6xl xl:text-7xl font-black text-slate-900 dark:text-white mb-3 sm:mb-4 md:mb-6 leading-tight"
+                             className="text-2xl sm:text-3xl md:text-5xl lg:text-3xl xl:text-4xl font-black text-slate-900 dark:text-white mb-4 sm:mb-6 md:mb-8 leading-tight"
             >
               <span className="block text-slate-900 dark:text-white">
                 All IT-related services<br className="hidden sm:block" />
@@ -303,7 +296,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
-              className="text-sm  md:text-lg lg:text-base text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-2xl mx-auto"
+                             className="text-base sm:text-lg md:text-xl lg:text-xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 leading-relaxed max-w-3xl mx-auto"
             >
               We craft cutting-edge software solutions that transform businesses. From AI-powered applications to 
               enterprise-grade systems, we deliver innovative technology that drives growth and competitive advantage.
@@ -316,25 +309,25 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.2 }}
-              className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4 justify-center"
+                             className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center"
             >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  className="border-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 w-full sm:w-auto hover:bg-slate-800 dark:hover:bg-slate-100 "
-                  onClick={() => scrollToSection("contact")}
-                >
-                  Get started →
-                </Button>
-              </motion.div>
+                             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                 <Button
+                   className="border-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 w-full sm:w-auto hover:bg-slate-800 dark:hover:bg-slate-100"
+                   onClick={() => scrollToSection("contact")}
+                 >
+                   Get Started
+                 </Button>
+               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button
-                  className="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 w-full sm:w-auto"
-                  onClick={() => scrollToSection("about")}
-                >
-                  See More →
-                </Button>
-              </motion.div>
+               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                 <Button
+                   className="border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-white hover:bg-slate-50 dark:hover:bg-slate-700 font-semibold px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-lg text-sm sm:text-base md:text-lg lg:text-xl transition-all duration-300 w-full sm:w-auto"
+                   onClick={() => scrollToSection("about")}
+                 >
+                   See More
+                 </Button>
+               </motion.div>
             </motion.div>
           </motion.div>
         </div>

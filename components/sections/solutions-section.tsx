@@ -96,7 +96,7 @@ export function SolutionsSection() {
   }
 
   return (
-    <section id="solutions" className="py-16 sm:py-24 px-2 sm:px-6 bg-white dark:bg-[#000515] relative overflow-hidden">
+    <section id="solutions" className="py-16 sm:py-24 px-4 sm:px-6 bg-white dark:bg-[#000515] relative overflow-hidden">
       {/* Background Image */}
       <div 
         className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none"
@@ -117,12 +117,12 @@ export function SolutionsSection() {
         >
           <Badge
             variant="secondary"
-            className="mb-6 px-6 py-3 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700 font-semibold"
+            className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
           >
             <Sparkles className="w-4 h-4 mr-2" />
             Why Choose Hari Tech
           </Badge>
-          <h2 className="text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
             Why Industry Leaders<br />Choose Hari Tech
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">

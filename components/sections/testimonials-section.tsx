@@ -75,23 +75,23 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-12 sm:py-8 pb-2 sm:pb-24 px-2 sm:px-6 bg-slate-50 dark:bg-[#000515]">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-slate-50 dark:bg-[#000515]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-20"
+          className="text-center mb-8 sm:mb-12"
         >
           <Badge
             variant="secondary"
-            className="mb-6 px-6 py-3 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 text-purple-700 dark:text-purple-300 border-purple-200 dark:border-purple-700 font-semibold"
+            className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
           >
             <Sparkles className="w-4 h-4 mr-2" />
             Client Testimonials
           </Badge>
-          <h2 className="text-2xl sm:text-4xl md:text-6xl font-semibold text-slate-900 dark:text-white mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
             Trusted by Industry Leaders
           </h2>
           <p className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
@@ -100,13 +100,13 @@ export function TestimonialsSection() {
         </motion.div>
 
         {/* Horizontal Infinite Scroll Testimonials */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden h-48">
           {/* Gradient Overlays for Smooth Edges */}
-          <div className="absolute left-0 top-0 w-8 sm:w-20 h-full bg-gradient-to-r from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 w-8 sm:w-20 h-full bg-gradient-to-l from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 w-8 sm:w-20 h-48 bg-gradient-to-r from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 w-8 sm:w-20 h-48 bg-gradient-to-l from-slate-50 dark:from-[#000515] to-transparent z-10"></div>
           
           {/* Infinite Scroll Container */}
-          <div className="flex space-x-2 sm:space-x-4 md:space-x-8 animate-scroll">
+          <div className="flex space-x-2 sm:space-x-4 md:space-x-8 animate-scroll h-48">
             {/* First Set */}
             {testimonials.map((testimonial, index) => (
               <motion.div
@@ -172,7 +172,7 @@ export function TestimonialsSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="flex-shrink-0 w-64 sm:w-80 md:w-96"
+                className="flex-shrink-0 w-64 sm:w-80 md:w-96 h-48"
               >
                 <div className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-4 sm:p-6 h-full">
                   {/* Rating Stars */}

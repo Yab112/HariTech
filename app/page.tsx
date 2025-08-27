@@ -15,7 +15,7 @@ import { ScrollToTop } from "@/components/ui/scroll-to-top"
 import { LoadingScreen } from "@/components/ui/loading-screen"
 import { FloatingDock } from "@/components/ui/floating-dock"
 import { links } from "./constants/navitems"
-import CalendlyEmbed from "@/components/sections/CalendlyWidget"
+
 import Stat from "@/components/sections/stat"
 
 export default function HariTechWebsite() {
@@ -49,13 +49,11 @@ export default function HariTechWebsite() {
           {/* <Navigation isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} scrollToSection={scrollToSection} /> */}
           <div className="space-y-0">
             <HeroSection scrollToSection={scrollToSection} />
-            <Stat/>
             <AboutSection />
             <ServicesSection />
             <SolutionsSection />
             <TestimonialsSection />
             <ContactSection scrollToSection={scrollToSection} />
-            <CalendlyEmbed />
             {/* <FooterSection  /> */}
           </div>
           <FloatingDock items={links} desktopClassName="fixed left-6 top-1/3 z-500  backdrop-3xl " />

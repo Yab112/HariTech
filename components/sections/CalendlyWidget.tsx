@@ -51,9 +51,8 @@ const CalendlyEmbed = () => {
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect to Calendly after form submission
-    window.open('https://calendly.com/edentech4/30min', '_blank');
-    setStep(4);
+    // Show embedded Calendly instead of redirecting
+    setStep(5);
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -70,8 +69,13 @@ const CalendlyEmbed = () => {
     setFormData({ name: "", email: "", company: "", phone: "", message: "" });
   };
 
+  // Add a function to handle direct Calendly access
+  const openDirectCalendly = () => {
+    setStep(5);
+  };
+
   return (
-    <section className="py-16 sm:py-20 md:py-24 bg-white dark:bg-slate-900" id="book-me">
+    <section className="py-16 sm:py-24 bg-white dark:bg-slate-900" id="book-me">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div 
@@ -93,15 +97,15 @@ const CalendlyEmbed = () => {
                      <p className="text-sm  text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6">
              Schedule a free consultation with our expert team. No pressure, no obligations - just a professional chat about your project.
            </p>
-           <motion.button
-             whileHover={{ scale: 1.05 }}
-             whileTap={{ scale: 0.95 }}
-             onClick={() => window.open('https://calendly.com/edentech4/30min', '_blank')}
-             className="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-300"
-           >
-             <FaCalendar className="w-4 h-4 mr-2" />
-             Book Directly on Calendly
-           </motion.button>
+                       <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={openDirectCalendly}
+              className="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-300"
+            >
+              <FaCalendar className="w-4 h-4 mr-2" />
+              Book Directly on Calendly
+            </motion.button>
         </motion.div>
 
         {/* Main Booking Card */}
@@ -137,8 +141,8 @@ const CalendlyEmbed = () => {
 
             {/* Progress Steps */}
             <div className="p-4 sm:p-6 border-b border-slate-200 dark:border-slate-700">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-4">
-                {[1, 2, 3, 4].map((stepNum) => (
+                             <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+                 {[1, 2, 3, 4, 5].map((stepNum) => (
                   <div key={stepNum} className="flex items-center">
                                          <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold transition-all duration-300 ${
                        step >= stepNum 
@@ -147,7 +151,7 @@ const CalendlyEmbed = () => {
                      }`}>
                                              {step >= stepNum ? <FaCheck className="w-3 h-3 sm:w-4 sm:h-4 text-white" /> : stepNum}
                     </div>
-                                         {stepNum < 4 && (
+                                         {stepNum < 5 && (
                        <div className={`w-8 sm:w-12 h-1 mx-2 sm:mx-3 rounded-full transition-all duration-300 ${
                          step > stepNum 
                            ? 'bg-slate-800 dark:bg-slate-600' 
@@ -353,16 +357,16 @@ const CalendlyEmbed = () => {
                   </motion.div>
                 )}
 
-                {step === 4 && (
-                  <motion.div
-                    key="step4"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.3 }}
-                    className="text-center"
-                  >
-                                         <motion.div 
+                                 {step === 4 && (
+                   <motion.div
+                     key="step4"
+                     initial={{ opacity: 0, x: 20 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     exit={{ opacity: 0, x: -20 }}
+                     transition={{ duration: 0.3 }}
+                     className="text-center"
+                   >
+                     <motion.div 
                        initial={{ scale: 0 }}
                        animate={{ scale: 1 }}
                        transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
@@ -370,40 +374,75 @@ const CalendlyEmbed = () => {
                      >
                        <FaCheck className="w-10 h-10 text-white" />
                      </motion.div>
-                    
-                    <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Meeting Scheduled!</h4>
-                                         <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-md mx-auto">
-                       We've sent a confirmation email to <span className="font-semibold text-slate-800 dark:text-slate-200">{formData.email}</span> with meeting details and calendar invite.
+                     
+                     <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Ready to Schedule!</h4>
+                     <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-md mx-auto">
+                       Great! Now let's schedule your meeting. You can select your preferred time slot below.
                      </p>
-                    
-                                         <div className="bg-slate-50 dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 max-w-md mx-auto">
-                      <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300 mb-2 sm:mb-3">
-                                                 <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
-                        <span className="font-semibold text-sm sm:text-base">
-                          {new Date(selectedDate).toLocaleDateString('en-US', { 
-                            weekday: 'long', 
-                            year: 'numeric', 
-                            month: 'long', 
-                            day: 'numeric' 
-                          })}
-                        </span>
-                      </div>
-                      <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300">
-                                                 <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
-                        <span className="font-semibold text-sm sm:text-base">{selectedTime}</span>
-                      </div>
-                    </div>
-                    
-                                         <motion.button
+                     
+                     <div className="bg-slate-50 dark:bg-slate-800 p-4 sm:p-6 rounded-xl sm:rounded-2xl mb-6 sm:mb-8 max-w-md mx-auto">
+                       <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300 mb-2 sm:mb-3">
+                         <FaCalendar className="w-4 h-4 sm:w-5 sm:h-5 text-blue-500" />
+                         <span className="font-semibold text-sm sm:text-base">
+                           {new Date(selectedDate).toLocaleDateString('en-US', { 
+                             weekday: 'long', 
+                             year: 'numeric', 
+                             month: 'long', 
+                             day: 'numeric' 
+                           })}
+                         </span>
+                       </div>
+                       <div className="flex items-center space-x-2 sm:space-x-3 text-slate-700 dark:text-slate-300">
+                         <FaClock className="w-4 h-4 sm:w-5 sm:h-5 text-purple-500" />
+                         <span className="font-semibold text-sm sm:text-base">{selectedTime}</span>
+                       </div>
+                     </div>
+                     
+                     <motion.button
                        whileHover={{ scale: 1.05 }}
                        whileTap={{ scale: 0.95 }}
-                       onClick={resetBooking}
+                       onClick={() => setStep(5)}
                        className="bg-slate-800 dark:bg-slate-700 text-white px-8 py-3 rounded-2xl font-bold hover:bg-slate-700 dark:hover:bg-slate-600 transition-all duration-300"
                      >
-                       Schedule Another Meeting
+                       Continue to Calendar
                      </motion.button>
-                  </motion.div>
-                )}
+                   </motion.div>
+                 )}
+
+                 {step === 5 && (
+                   <motion.div
+                     key="step5"
+                     initial={{ opacity: 0, x: 20 }}
+                     animate={{ opacity: 1, x: 0 }}
+                     exit={{ opacity: 0, x: -20 }}
+                     transition={{ duration: 0.3 }}
+                     className="w-full"
+                   >
+                     <div className="flex items-center justify-center space-x-2 sm:space-x-4 mb-6 sm:mb-8">
+                       <motion.button
+                         whileHover={{ scale: 1.05 }}
+                         whileTap={{ scale: 0.95 }}
+                         onClick={() => setStep(3)}
+                         className="flex items-center space-x-1 sm:space-x-2 text-slate-600 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-200 font-semibold text-sm sm:text-base"
+                       >
+                         <span>←</span>
+                         <span>Back</span>
+                       </motion.button>
+                       <h4 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Select Your Time</h4>
+                     </div>
+                     
+                     <div className="bg-white dark:bg-slate-800 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-700">
+                       <iframe
+                         src="https://calendly.com/edentech4/30min?embed_domain=localhost&embed_type=Inline"
+                         width="100%"
+                         height="700"
+                         frameBorder="0"
+                         title="Schedule a meeting"
+                         className="w-full"
+                       />
+                     </div>
+                   </motion.div>
+                 )}
               </AnimatePresence>
         </div>
           </div>
