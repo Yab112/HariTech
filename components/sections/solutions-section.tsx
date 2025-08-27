@@ -122,8 +122,8 @@ export function SolutionsSection() {
             <Sparkles className="w-4 h-4 mr-2" />
             Why Choose Hari Tech
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-            Why Industry Leaders<br />Choose Hari Tech
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+            Why Industry Leaders<br /><span className="text-blue-600">Choose Hari Tech</span>
           </h2>
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             We combine cutting-edge technology with proven methodologies to deliver solutions that drive measurable business outcomes and competitive advantages.

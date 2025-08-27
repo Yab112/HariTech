@@ -66,7 +66,7 @@ export function AboutSection() {
   };
 
   return (
-    <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 relative overflow-hidden">
+    <section id="about" className="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 relative overflow-hidden">
       {/* Subtle Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-transparent" />
@@ -80,7 +80,7 @@ export function AboutSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <Badge
             variant="secondary"
@@ -90,14 +90,14 @@ export function AboutSection() {
             About Hari Tech
           </Badge>
           
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
             Driving Digital<br />
-            <span className="text-neutral-900 dark:text-white">
+            <span className="text-blue-600">
               Transformation
             </span>
           </h2>
           
-          <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             We are a forward-thinking technology company specializing in enterprise software solutions, 
             AI integration, and digital transformation. Our mission is to empower businesses with 
             innovative technology that drives growth and competitive advantage.
@@ -105,7 +105,7 @@ export function AboutSection() {
         </motion.div>
 
         {/* Main Content - Image and Content Side by Side */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">
           {/* Left Column - Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -180,11 +180,11 @@ export function AboutSection() {
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center">
                   <TrendingUp className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+                <h3 className="text-2xl sm:text-3xl  text-slate-900 dark:text-white">
                   Our Mission
                 </h3>
               </div>
-              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
                 To deliver exceptional technology solutions that transform businesses, 
                 enhance user experiences, and create sustainable competitive advantages 
                 in the digital economy.
@@ -193,7 +193,7 @@ export function AboutSection() {
 
             {/* Core Values */}
             <div className="space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">
+              <h3 className="text-2xl sm:text-3xl  text-slate-900 dark:text-white">
                 Core Values
               </h3>
               <div className="space-y-4">
@@ -210,10 +210,10 @@ export function AboutSection() {
                       <value.icon className="w-6 h-6 text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors duration-300" />
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-2">
+                      <h4 className="text-lg font-medium text-neutral-900 dark:text-white mb-2">
                         {value.title}
                       </h4>
-                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      <p className="text-slate-600 dark:text-slate-300 leading-relaxed text-base">
                         {value.description}
                       </p>
                     </div>

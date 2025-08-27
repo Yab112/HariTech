@@ -88,7 +88,7 @@ const CalendlyEmbed = () => {
             <FaCalendar className="w-4 h-4 mr-2" />
             Free 30-Min Discovery Call
           </div>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-semibold text-neutral-900 dark:text-white mb-6 leading-tight">
             Let's Build Something
             <span className="block text-slate-800 dark:text-white mb-8">
               Amazing Together    
@@ -375,7 +375,7 @@ const CalendlyEmbed = () => {
                        <FaCheck className="w-10 h-10 text-white" />
                      </motion.div>
                      
-                     <h4 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-4">Ready to Schedule!</h4>
+                     <h4 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl font-semibold text-neutral-900 dark:text-white mb-6 leading-tight">Ready to Schedule!</h4>
                      <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 max-w-md mx-auto">
                        Great! Now let's schedule your meeting. You can select your preferred time slot below.
                      </p>

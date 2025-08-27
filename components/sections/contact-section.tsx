@@ -124,7 +124,7 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
     {
       icon: Phone,
       title: "Phone",
-      info: ["+251944003334", "+251911906245"],
+      info: ["+251 944 003 334", "+251 911 906 245"],
       description: "Mon-Fri from 8am to 6pm",
       action: handlePhoneClick,
     },
@@ -153,8 +153,9 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
             <Sparkles className="w-4 h-4 mr-2" />
             Get In Touch
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-            Let's Build Something<br className="hidden sm:block" />Great Together
+
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+            Let's Build Something<br className="hidden sm:block" /><span className="text-blue-600">Great Together</span>
           </h2>
           <p className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             Ready to transform your business with enterprise-grade software?
@@ -227,7 +228,7 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
                          name="phoneNumber"
                          value={formData.phoneNumber}
                          onChange={handleInputChange}
-                         placeholder="+251911906245"
+                         placeholder="+251 911 906 245"
                          className="h-10 sm:h-12 border-slate-300 dark:border-slate-600 focus:border-blue-500 focus:ring-blue-500 rounded-lg transition-all duration-200 text-sm"
                        />
                      </motion.div>
@@ -316,7 +317,17 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
                         {contact.title}
                       </h4>
                       <p className="text-slate-900 dark:text-white font-medium mb-1 text-sm sm:text-base">
-                        {contact.info}
+                        {Array.isArray(contact.info) ? (
+                          <div className="space-y-1">
+                            {contact.info.map((item, idx) => (
+                              <div key={idx} className="hover:text-blue-600 transition-colors font-mono">
+                                {item}
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          contact.info
+                        )}
                       </p>
                       <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-sm">
                         {contact.description}

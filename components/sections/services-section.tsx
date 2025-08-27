@@ -75,10 +75,10 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight"
+            className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight"
           >
             Comprehensive<br />
-            <span className="text-neutral-900 dark:text-white">
+            <span className="text-blue-600 dark:text-blue-400">
               Digital Solutions
             </span>
           </motion.h2>
@@ -88,7 +88,7 @@ export function ServicesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4 }}
-            className="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
+            className="text-base  md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
           >
             We deliver cutting-edge technology solutions that drive innovation, 
             efficiency, and growth for businesses of all sizes.
@@ -113,7 +113,7 @@ export function ServicesSection() {
               className="group relative"
             >
               {/* Service Card */}
-              <div className="relative h-full bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 backdrop-blur-sm">
+              <div className="relative h-full bg-white dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 backdrop-blur-sm">
                 {/* Background Image with Overlay */}
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-300">
                   <div
@@ -132,9 +132,9 @@ export function ServicesSection() {
                     <motion.div
                       whileHover={{ rotate: 360, scale: 1.1 }}
                       transition={{ duration: 0.5 }}
-                      className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg"
+                      className="w-14 h-14  rounded-xl flex items-center justify-center "
                     >
-                      <service.icon className="w-7 h-7 text-white" />
+                      <service.icon className="w-7 h-7 text-blue-600" />
                     </motion.div>
                     
                     <Badge 

@@ -14,6 +14,7 @@ import { ScrollProgress } from "@/components/ui/scroll-progress"
 import { ScrollToTop } from "@/components/ui/scroll-to-top"
 import { LoadingScreen } from "@/components/ui/loading-screen"
 import { FloatingDock } from "@/components/ui/floating-dock"
+import { Navigation } from "@/components/navigation"
 import { links } from "./constants/navitems"
 
 import Stat from "@/components/sections/stat"
@@ -35,7 +36,7 @@ export default function HariTechWebsite() {
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#000515] transition-colors duration-300">
+    <div className="min-h-screen bg-white dark:bg-[#0F172A] transition-colors duration-300">
       <LoadingScreen isLoading={isLoading} />
 
       {!isLoading && (
@@ -46,17 +47,21 @@ export default function HariTechWebsite() {
           <ScrollProgress />
           <ScrollToTop />
 
-          {/* <Navigation isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} scrollToSection={scrollToSection} /> */}
           <div className="space-y-0">
-            <HeroSection scrollToSection={scrollToSection} />
-            <AboutSection />
+            <div className="relative">
+              <Navigation scrollToSection={scrollToSection} />
+              <HeroSection scrollToSection={scrollToSection} />
+            </div>
+            <div className="relative -mt-20 sm:-mt-32">
+              <AboutSection />
+            </div>
             <ServicesSection />
             <SolutionsSection />
             <TestimonialsSection />
             <ContactSection scrollToSection={scrollToSection} />
             {/* <FooterSection  /> */}
           </div>
-          <FloatingDock items={links} desktopClassName="fixed left-6 top-1/3 z-500  backdrop-3xl " />
+          <FloatingDock items={links} mobileClassName="fixed bottom-0 left-0 right-0 lg:hidden" />
         </>
       )}
     </div>

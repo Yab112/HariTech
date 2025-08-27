@@ -91,8 +91,8 @@ export function TestimonialsSection() {
             <Sparkles className="w-4 h-4 mr-2" />
             Client Testimonials
           </Badge>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-6 leading-tight">
-            Trusted by Industry Leaders
+          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+            Trusted by Industry <br /><span className="text-blue-600">Leaders</span>
           </h2>
           <p className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             Discover why Fortune 500 companies and high-growth startups choose Hari Tech for their most critical technology projects.

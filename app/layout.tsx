@@ -1,7 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -62,7 +61,9 @@ export const metadata: Metadata = {
   generator: "v0.dev",
 };
 
-export default function RootLayout({
+const inter = Inter({ subsets: ["latin"] });
+
+  export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -72,13 +73,11 @@ export default function RootLayout({
       <head suppressHydrationWarning>
         <style>{`
 html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
+  font-family: ${inter.style.fontFamily};
 }
         `}</style>
       </head>
-      <body>
+      <body className={inter.className}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
