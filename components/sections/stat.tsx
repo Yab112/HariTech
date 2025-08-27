@@ -24,36 +24,41 @@ const Stat = () => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 1 }}
-      className="w-full mx-auto bg-white/80 dark:bg-slate-800/80 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 "
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="w-full mx-auto bg-white/80 dark:bg-blue-950 backdrop-blur-md rounded-xl p-4 sm:p-6 border border-white/20 "
     >
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 md:gap-4">
         {stats.map((stat, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{
-              delay: 1.2 + index * 0.1,
+              delay: index * 0.1,
               type: "spring",
               stiffness: 200,
+              duration: 0.6,
             }}
             whileHover={{ scale: 1.05, rotate: 2 }}
             className="text-center p-2 sm:p-3 md:p-4"
           >
             <motion.div
               initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5 + index * 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ delay: index * 0.1 + 0.2, duration: 0.6 }}
               className="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-black text-slate-900 dark:text-slate-100"
             >
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{
-                  duration: 1.5,
-                  delay: 1.5 + index * 0.1,
+                  duration: 0.8,
+                  delay: index * 0.1 + 0.3,
                   ease: "easeOut",
                 }}
                 className="inline-block"

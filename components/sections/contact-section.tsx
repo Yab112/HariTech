@@ -124,7 +124,7 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
     {
       icon: Phone,
       title: "Phone",
-      info: "+251 911 906 245",
+      info: "+251944003334",
       description: "Mon-Fri from 8am to 6pm",
       action: handlePhoneClick,
     },

@@ -203,3 +203,47 @@ select:focus {
     transform: translateY(-1px);
   }
 }
+
+/* Optimize scroll performance */
+.section-container {
+  contain: layout style paint;
+  will-change: auto;
+}
+
+/* Reduce repaints for animated elements */
+.animated-element {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Smooth scroll animations */
+.motion-safe\:animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Optimize viewport animations */
+[data-framer-motion] {
+  will-change: transform, opacity;
+}
+
+/* Reduce motion for better performance */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:animate-fade-in-up {
+    animation: none;
+  }
+  
+  [data-framer-motion] {
+    will-change: auto;
+  }
+}

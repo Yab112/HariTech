@@ -52,27 +52,27 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
   }))
 
   return (
-    <section id="home" className="relative pt-8 pb-20 overflow-hidden min-h-screen">
+    <section id="home" className="relative pt-8 pb-20 overflow-hidden h-screen">
       {/* Base Gradient Background with Color Effects */}
       <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50/10 to-indigo-50/15 dark:from-[#000515] dark:via-[#000515]/95 dark:to-[#000515]/90" />
 
-      {/* Animated Color Overlay */}
-      <motion.div
-        className="absolute inset-0"
-        style={{
-          background: `radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.08), transparent 50%), 
-                       radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.06), transparent 50%),
-                       radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05), transparent 50%)`,
-        }}
-        animate={{
-          opacity: [0.3, 0.8, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Number.POSITIVE_INFINITY,
-          ease: "easeInOut",
-        }}
-      />
+              {/* Animated Color Overlay */}
+        <motion.div
+          className="absolute inset-0"
+          style={{
+            background: `radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.08), transparent 50%), 
+                         radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.06), transparent 50%),
+                         radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.05), transparent 50%)`,
+          }}
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Number.POSITIVE_INFINITY,
+            ease: "easeInOut",
+          }}
+        />
 
       {/* Animated Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.03]">
@@ -142,7 +142,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
         {/* Triangle Shape */}
         <motion.div
-          className="absolute w-48 h-48 bg-gradient-to-r from-purple-400/10 to-blue-400/10"
+          className="absolute w-48 h-48 bg-gradient-to-r from-purple-400/10 to-blue-400/10 hidden sm:block"
           style={{ 
             top: '70%', 
             left: '20%',
@@ -164,7 +164,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
       {/* Animated Particles */}
       <div className="absolute inset-0">
-        {Array.from({ length: 20 }).map((_, i) => (
+        {Array.from({ length: 12 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-blue-400/30 rounded-full"
@@ -189,7 +189,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
 
       {/* Animated Lines */}
       <div className="absolute inset-0">
-        {Array.from({ length: 5 }).map((_, i) => (
+        {Array.from({ length: 3 }).map((_, i) => (
           <motion.div
             key={i}
             className="absolute h-px bg-gradient-to-r from-transparent via-blue-400/20 to-transparent"
@@ -243,35 +243,35 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
         ))}
       </div>
 
-      {/* Main Content Container */}
-      <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+             {/* Main Content Container */}
+       <div className="relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto h-full flex flex-col">
 
 
-        {/* Logo and Company Name - Top Center */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1, duration: 0.8 }}
-          className="flex flex-col items-center justify-center mb-2 sm:mb-4 md:mb-6"
-        >
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.3 }}
-            className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 sm:mb-2"
-          >
-            <img
-              src="/logo.jpg"
-              alt="Hari Tech Logo"
-              className="h-12 sm:h-16 w-auto rounded-lg"
-            />
-            <div className="text-center sm:text-left">
-              <h1 className="text-2xl sm:text-3xl font-semibold text-slate-900 dark:text-white">Hari Tech</h1>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Software Development</p>
-              </div>
-            </motion.div>
-          </motion.div>
+                 {/* Logo and Company Name - Top Center */}
+         <motion.div
+           initial={{ opacity: 0, y: -10 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: 0.1, duration: 0.8 }}
+           className="flex flex-col items-center justify-center pt-8 sm:pt-12 md:pt-16"
+         >
+           <motion.div
+             whileHover={{ scale: 1.05 }}
+             transition={{ duration: 0.3 }}
+             className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-3 sm:mb-1"
+           >
+             <img
+               src="/logo.jpg"
+               alt="Hari Tech Logo"
+               className="h-10 sm:h-14 md:h-16 w-auto rounded-lg"
+             />
+             <div className="text-center sm:text-left">
+               <h1 className="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white">Hari Technology</h1>
+               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">Software Development</p>
+               </div>
+             </motion.div>
+           </motion.div>
 
-        <div className="flex flex-col justify-center items-center min-h-[calc(100vh-120px)] sm:min-h-[calc(100vh-140px)] lg:min-h-[calc(100vh-160px)]">
+         <div className="flex flex-col flex-1 justify-center items-center">
           {/* Main Content - Centered */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -305,7 +305,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.0 }}
-              className="text-xs sm:text-sm md:text-lg lg:text-xl text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-2xl mx-auto"
+              className="text-sm  md:text-lg lg:text-base text-slate-600 dark:text-slate-300 mb-4 md:mb-6 leading-relaxed max-w-2xl mx-auto"
             >
               We craft cutting-edge software solutions that transform businesses. From AI-powered applications to 
               enterprise-grade systems, we deliver innovative technology that drives growth and competitive advantage.
@@ -322,7 +322,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             >
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button
-                  className="border-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 w-full sm:w-auto hover:bg-slate-800 dark:hover:bg-slate-100"
+                  className="border-none bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-semibold px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 rounded-lg text-xs sm:text-sm md:text-base lg:text-lg transition-all duration-300 w-full sm:w-auto hover:bg-slate-800 dark:hover:bg-slate-100 "
                   onClick={() => scrollToSection("contact")}
                 >
                   Get started →

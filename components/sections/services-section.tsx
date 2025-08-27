@@ -30,7 +30,8 @@ export function ServicesSection() {
           <motion.div
             className="absolute inset-0 flex items-center justify-center"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div
@@ -46,7 +47,8 @@ export function ServicesSection() {
           <motion.div
             className="absolute bottom-0 right-0 z-10 w-60 h-60 md:w-72 md:h-72 lg:w-[350px] lg:h-[280px] rounded-2xl overflow-hidden"
             initial={{ opacity: 0, x: 50, y: 50, scale: 0.8 }}
-            animate={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            whileInView={{ opacity: 1, x: 0, y: 0, scale: 1 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.8, delay: 0.4 }}
             whileHover={{ 
               scale: 1.05,
@@ -70,7 +72,8 @@ export function ServicesSection() {
           {/* Service Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="flex items-center justify-between mb-4"
           >
@@ -93,7 +96,8 @@ export function ServicesSection() {
           {/* Service Title */}
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight"
           >
@@ -103,7 +107,8 @@ export function ServicesSection() {
           {/* Service Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-xs sm:text-sm text-slate-300 mb-3 sm:mb-4 leading-relaxed"
           >
@@ -113,7 +118,8 @@ export function ServicesSection() {
           {/* Features List */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: 0.5 }}
             className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6"
           >
@@ -121,7 +127,8 @@ export function ServicesSection() {
               <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: 0.6 + idx * 0.1 }}
                 className="flex items-center text-slate-200 group"
               >
