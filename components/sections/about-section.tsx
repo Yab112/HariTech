@@ -15,6 +15,7 @@ import {
   Star,
   TrendingUp
 } from "lucide-react";
+import { HeaderWithTitleLine } from "@/components/ui/header-with-title-line";
 
 export function AboutSection() {
   const stats = [
@@ -76,12 +77,7 @@ export function AboutSection() {
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
+        <div className="text-center mb-8">
           <Badge
             variant="secondary"
             className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
@@ -90,19 +86,24 @@ export function AboutSection() {
             About Hari Tech
           </Badge>
           
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
-            Driving Digital<br />
-            <span className="text-blue-600">
-              Transformation
-            </span>
-          </h2>
+          <HeaderWithTitleLine
+            titleLineColor="#2563eb"
+            animationDelay={0.2}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+              Driving Digital<br />
+              <span className="text-blue-600">
+                Transformation
+              </span>
+            </h2>
+          </HeaderWithTitleLine>
           
           <p className="text-base sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             We are a forward-thinking technology company specializing in enterprise software solutions, 
             AI integration, and digital transformation. Our mission is to empower businesses with 
             innovative technology that drives growth and competitive advantage.
           </p>
-        </motion.div>
+        </div>
 
         {/* Main Content - Image and Content Side by Side */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-12">

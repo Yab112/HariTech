@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { Zap, Shield, Users, Award, Clock, Globe, Sparkles, ChevronLeft, ChevronRight } from "lucide-react"
 import { useState, useEffect } from "react"
+import { HeaderWithTitleLine } from "@/components/ui/header-with-title-line"
 
 const features = [
   {
@@ -109,12 +110,7 @@ export function SolutionsSection() {
       />
       <div className="max-w-7xl mx-auto w-full relative z-10">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-20"
-        >
+        <div className="text-center mb-12 sm:mb-20">
           <Badge
             variant="secondary"
             className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
@@ -122,13 +118,20 @@ export function SolutionsSection() {
             <Sparkles className="w-4 h-4 mr-2" />
             Why Choose Hari Tech
           </Badge>
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
-            Why Industry Leaders<br /><span className="text-blue-600">Choose Hari Tech</span>
-          </h2>
+          
+          <HeaderWithTitleLine
+            titleLineColor="#2563eb"
+            animationDelay={0.2}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+              Why Industry Leaders<br /><span className="text-blue-600">Choose Hari Tech</span>
+            </h2>
+          </HeaderWithTitleLine>
+          
           <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             We combine cutting-edge technology with proven methodologies to deliver solutions that drive measurable business outcomes and competitive advantages.
           </p>
-        </motion.div>
+        </div>
 
         {/* Three-Slide Carousel */}
         <div className="relative max-w-full">

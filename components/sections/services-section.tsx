@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { services } from "@/app/constants/services";
 import { CheckCircle, ArrowRight, Sparkles, ExternalLink } from "lucide-react";
 import { useState } from "react";
+import { HeaderWithTitleLine } from "@/components/ui/header-with-title-line";
 
 export function ServicesSection() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -49,51 +50,32 @@ export function ServicesSection() {
     <section id="services" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 via-blue-50/20 to-purple-50/20 dark:from-[#000515] dark:via-[#000515]/95 dark:to-[#000515]/90">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
+        <div className="text-center mb-8 sm:mb-12">
+          <Badge
+            variant="secondary"
+            className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
           >
-            <Badge
-              variant="secondary"
-              className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
-            >
-              <Sparkles className="w-4 h-4 mr-2" />
-              Our Services
-            </Badge>
-          </motion.div>
+            <Sparkles className="w-4 h-4 mr-2" />
+            Our Services
+          </Badge>
           
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-            className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight"
+          <HeaderWithTitleLine
+            titleLineColor="#2563eb"
+            animationDelay={0.2}
           >
-            Comprehensive<br />
-            <span className="text-blue-600 dark:text-blue-400">
-              Digital Solutions
-            </span>
-          </motion.h2>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+              Comprehensive<br />
+              <span className="text-blue-600 dark:text-blue-400">
+                Digital Solutions
+              </span>
+            </h2>
+          </HeaderWithTitleLine>
           
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-            className="text-base  md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed"
-          >
+          <p className="text-base  md:text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto leading-relaxed">
             We deliver cutting-edge technology solutions that drive innovation, 
             efficiency, and growth for businesses of all sizes.
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
 
         {/* Services Grid */}
         <motion.div

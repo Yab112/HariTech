@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Rocket, Mail, Phone, MapPin, Loader2, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner"; // Import Sonner toast
+import { HeaderWithTitleLine } from "@/components/ui/header-with-title-line";
 
 interface ContactSectionProps {
   scrollToSection: (sectionId: string) => void;
@@ -140,12 +141,7 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
   return (
          <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-[#000515]">
               <div className="w-full mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-12"
-        >
+        <div className="text-center mb-8 sm:mb-12">
           <Badge
             variant="secondary"
             className="mb-6 px-6 py-3 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-blue-700 dark:text-blue-300 border-blue-200 dark:border-blue-700 font-semibold rounded-xl"
@@ -154,14 +150,20 @@ export function ContactSection({ scrollToSection }: ContactSectionProps) {
             Get In Touch
           </Badge>
 
-          <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
-            Let's Build Something<br className="hidden sm:block" /><span className="text-blue-600">Great Together</span>
-          </h2>
+          <HeaderWithTitleLine
+            titleLineColor="#2563eb"
+            animationDelay={0.2}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-5xl lg:text-5xl  text-neutral-900 dark:text-white mb-6 leading-tight">
+              Let's Build Something<br className="hidden sm:block" /><span className="text-blue-600">Great Together</span>
+            </h2>
+          </HeaderWithTitleLine>
+          
           <p className="text-sm sm:text-base md:text-xl text-slate-600 dark:text-slate-300 max-w-4xl mx-auto leading-relaxed">
             Ready to transform your business with enterprise-grade software?
             Schedule a consultation with our technical team.
           </p>
-        </motion.div>
+        </div>
 
               <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12">
            <motion.div

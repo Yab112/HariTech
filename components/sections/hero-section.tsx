@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Play, TrendingUp, Code, Database, Cloud, Cpu, Globe, Lock, Zap, Shield, Users, Star } from "lucide-react"
 
+
 interface HeroSectionProps {
   scrollToSection: (sectionId: string) => void
 }
@@ -143,7 +144,9 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             <h1 className="text-4xl sm:text-6xl md:text-6xl lg:text-5xl  text-slate-900 dark:text-white mb-6 leading-tight ">
               Transform Your Business
               <br />
-              <span className="text-blue-600 dark:text-blue-400">With Technology</span>
+              <div className="relative z-10 inline-block bg-white rounded-lg text-3xl md:text-4xl lg:text-5xl font-semibold " style={{transform: 'skew(-6deg)', padding: '0.25rem 1.5rem 0.5rem'}}>
+                <span className="inline-block text-[#34D399]" style={{transform: 'skew(6deg)'}}>Smart Solutions</span>
+              </div>
             </h1>
           </motion.div>
 
