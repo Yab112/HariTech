@@ -75,8 +75,8 @@ export function Navigation({ scrollToSection }: NavigationProps) {
               whileHover={{ scale: 1.02 }}
               className="flex items-center"
             >
-              <span className="text-xl font-bold text-slate-900 dark:text-white">
-                haritechnology
+              <span className="text-xl font-bold  text-blue-900">
+                Hari Technology
               </span>
             </motion.div>
 
