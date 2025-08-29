@@ -10,19 +10,22 @@ export const metadata: Metadata = {
   description:
     "Hari Tech delivers enterprise-grade software solutions for Fortune 500 companies and high-growth startups. We specialize in scalable web applications, mobile development, AI solutions, and cloud infrastructure with guaranteed performance and security.",
   keywords:
-    "enterprise software development, custom software solutions, web applications, mobile apps, AI development, cloud infrastructure, Fortune 500, startup solutions, scalable software, enterprise security",
-  authors: [{ name: "Hari Tech" }],
-  creator: "Hari Tech",
-  publisher: "Hari Tech",
-  metadataBase: new URL("https://haritech.vercel.app"),
+    "enterprise software development, custom software solutions, web applications, mobile apps, AI development, cloud infrastructure, Fortune 500, startup solutions, scalable software, enterprise security, software consulting, digital transformation",
+  authors: [{ name: "Haritechnology" }],
+  creator: "Haritechnology",
+  publisher: "Haritechnology",
+  metadataBase: new URL("https://www.haritechnology.com.et/"),
   alternates: {
     canonical: "/",
   },
+  category: "Technology",
+  classification: "Business",
+  referrer: "origin-when-cross-origin",
   openGraph: {
     title: "Hari Tech - Enterprise Software Solutions That Scale",
     description:
       "Hari Tech delivers enterprise-grade software solutions for Fortune 500 companies and high-growth startups. We specialize in scalable applications with guaranteed performance and security.",
-    url: "https://haritech.vercel.app",
+    url: "https://www.haritechnology.com.et/",
     siteName: "Hari Tech",
     images: [
       {
@@ -41,7 +44,7 @@ export const metadata: Metadata = {
     description:
       "Hari Tech delivers enterprise-grade software solutions for Fortune 500 companies and high-growth startups. We specialize in scalable applications with guaranteed performance and security.",
     images: ["/og-image.png"],
-    creator: "@haritech",
+    creator: "@haritechnology",
   },
   robots: {
     index: true,
@@ -58,7 +61,16 @@ export const metadata: Metadata = {
     google: "X2kFv1J397jTur9AxkAED_pIqsdLVu-_7qJteIkRTvw",
     yandex: "367cbb79bad959fa",
   },
-  generator: "v0.dev",
+  generator: "Next.js",
+  applicationName: "haritechnology",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "haritechnology",
+  },
+  formatDetection: {
+    telephone: false,
+  },
 };
 
 const inter = Inter({ subsets: ["latin"] });
@@ -76,6 +88,32 @@ html {
   font-family: ${inter.style.fontFamily};
 }
         `}</style>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Hari Tech",
+              "url": "https://www.haritechnology.com.et",
+              "logo": "https://www.haritechnology.com.et/logo.jpg",
+              "description": "Enterprise-grade software solutions for Fortune 500 companies and high-growth startups",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "ET"
+              },
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "availableLanguage": "English"
+              },
+              "sameAs": [
+                "https://twitter.com/haritechnology",
+                "https://linkedin.com/company/haritechnology"
+              ]
+            })
+          }}
+        />
       </head>
       <body className={inter.className}>
         <ThemeProvider
