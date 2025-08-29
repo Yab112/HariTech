@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Hari Tech",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://www.haritechnology.com.et/og-image.png",
         width: 1200,
         height: 630,
         alt: "Hari Tech - Enterprise Software Solutions That Scale",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Hari Tech - Enterprise Software Solutions That Scale",
     description:
       "Hari Tech delivers enterprise-grade software solutions for Fortune 500 companies and high-growth startups. We specialize in scalable applications with guaranteed performance and security.",
-    images: ["/og-image.png"],
+    images: ["https://www.haritechnology.com.et/og-image.png"],
     creator: "@haritechnology",
   },
   robots: {
