@@ -115,7 +115,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                 <span>Available Now</span>
               </div>
               <div className="flex items-center">
-                <span>500+ Happy Clients</span>
+                <span>100+ Happy Clients</span>
               </div>
               <div className="flex items-center">
                 <span>5.0 Rating</span>
@@ -151,7 +151,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                 <span>Available</span>
               </div>
               <div className="flex items-center">
-                <span>500+ Clients</span>
+                <span>100+ Clients</span>
               </div>
             </div>
           </div>
