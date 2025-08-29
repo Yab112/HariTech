@@ -114,9 +114,32 @@ html {
             })
           }}
         />
+        {/* Explicit meta tags for better Telegram compatibility */}
+        <meta property="og:title" content="Hari Technology - Enterprise Software Solutions That Scale" />
+        <meta property="og:description" content="Hari Technology delivers enterprise-grade software solutions for Fortune 500 companies and high-growth startups. We specialize in scalable applications with guaranteed performance and security." />
+        <meta property="og:image" content="https://www.haritechnology.com.et/og-image2.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Hari Technology - Enterprise Software Solutions That Scale" />
+        <meta property="og:url" content="https://www.haritechnology.com.et/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Hari Technology" />
+        
+        {/* Twitter Card meta tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Hari Technology - Enterprise Software Solutions That Scale" />
+        <meta name="twitter:description" content="Hari Technology delivers enterprise-grade software solutions for Fortune 500 companies and high-growth startups. We specialize in scalable applications with guaranteed performance and security." />
+        <meta name="twitter:image" content="https://www.haritechnology.com.et/og-image2.png" />
+        <meta name="twitter:creator" content="@haritechnology" />
+        
         {/* Telegram-specific meta tags for better preview */}
         <meta name="telegram:channel" content="@haritechnology" />
         <meta name="telegram:site" content="@haritechnology" />
+        
+        {/* Additional meta tags for better compatibility */}
+        <meta name="image" content="https://www.haritechnology.com.et/og-image2.png" />
+        <meta name="thumbnail" content="https://www.haritechnology.com.et/og-image2.png" />
+        <meta name="msapplication-TileImage" content="https://www.haritechnology.com.et/og-image2.png" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
