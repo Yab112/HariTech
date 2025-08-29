@@ -140,7 +140,7 @@ export function Navigation({ scrollToSection }: NavigationProps) {
               className="flex items-center"
             >
               <span className="text-lg font-bold text-slate-900 dark:text-blue-400">
-                haritechnology
+                Hari Technology
               </span>
             </motion.div>
 
